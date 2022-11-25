@@ -8,31 +8,32 @@ class ProductRatings extends StatefulWidget {
 }
 
 class _ProductRatingsState extends State<ProductRatings> {
-  var selectedindex = 0;
-  var arraylist = [];
+  int _currentRating = 0;
+  Widget _buildRatingProductRatings(int index) {
+    if (index < _currentRating) {
+      return Icon(Icons.star, color: appcolor);
+    } else {
+      return Icon(Icons.star_border_outlined);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1.00.hp,
-      width: 60.00.wp,
+      height: 2.00.hp,
+      width: 200,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: 5,
           itemBuilder: ((context, index) {
-            return InkWell(
-              onTap: (() {
-                setState(() {
-                  selectedindex = index;
-                  print(selectedindex.toString());
-                  // arraylist.addAll(selectedindex);
-                });
-              }),
-              child: Icon(
-                Icons.star,
-                color: selectedindex == index ? appcolor : Colors.blue,
-                size: 18,
-              ),
-            );
+            return GestureDetector(
+                onTap: (() {
+                  setState(() {
+                    _currentRating = index + 1;
+                    print(_currentRating.toString());
+                  });
+                }),
+                child: _buildRatingProductRatings(index));
           })),
     );
   }

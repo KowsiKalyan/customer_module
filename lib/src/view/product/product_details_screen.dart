@@ -39,7 +39,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             bottom: Radius.circular(30),
           ),
         ),
-        toolbarHeight: 13.00.hp,
+        toolbarHeight: 12.00.hp,
         backgroundColor: appcolor,
       ),
       body: Padding(
@@ -60,10 +60,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         image: AssetImage('assets/images/t.jpg'))),
               ),
               SizedBox(
-                height: 4.00.hp,
+                height: 3.00.hp,
               ),
               Container(
-                height: 11.00.hp,
+                height: 10.00.hp,
                 width: 100.00.wp,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -91,7 +91,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 ),
               ),
               SizedBox(
-                height: 1.00.hp,
+                height: 2.00.hp,
               ),
               const ColorChoose(),
               SizedBox(
