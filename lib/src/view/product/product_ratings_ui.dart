@@ -30,6 +30,7 @@ class _ProductRatingsState extends State<ProductRatings> {
                 onTap: (() {
                   setState(() {
                     _currentRating = index + 1;
+                    Fluttertoast.showToast(msg: 'Thanks for ratings!');
                     print(_currentRating.toString());
                   });
                 }),
