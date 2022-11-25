@@ -23,83 +23,78 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
     return SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: GridView.builder(
+            primary: false,
             itemCount: 4,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Get.to(ProductDetailsScreen());
+                  Get.to(const ProductDetailsScreen());
                 },
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 5, right: 5),
-                  child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: card),
-                          borderRadius: BorderRadius.circular(2)),
-                      child: Column(
+                child: Card(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 27.00.hp,
+                        decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(2),
+                                topRight: Radius.circular(2)),
+                            image: DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage(image[index]))),
+                      ),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'DMuse',
+                          style: listtitle,
+                          textAlign: TextAlign.start,
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            height: 16.00.hp,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(2),
-                                    topRight: Radius.circular(2)),
-                                image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(image[index]))),
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
+                          FittedBox(
+                            fit: BoxFit.cover,
                             child: Text(
-                              'DMuse',
-                              style: listtitle,
-                              textAlign: TextAlign.start,
+                              '\$1,099',
+                              style: productprice,
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              FittedBox(
-                                fit: BoxFit.cover,
-                                child: Text(
-                                  '\$1,099',
-                                  style: productprice,
-                                ),
+                          FittedBox(
+                            fit: BoxFit.cover,
+                            child: Text(
+                              '\$1,099',
+                              style: productpricestrike,
+                            ),
+                          ),
+                          Container(
+                            height: MediaQuery.of(context).size.height * 0.03,
+                            width: 10.00.wp,
+                            decoration: BoxDecoration(
+                                color: appcolor,
+                                borderRadius: BorderRadius.circular(2)),
+                            child: Center(
+                              child: Text(
+                                '40%',
+                                style: buttonprice,
+                                textAlign: TextAlign.center,
                               ),
-                              FittedBox(
-                                fit: BoxFit.cover,
-                                child: Text(
-                                  '\$1,099',
-                                  style: productpricestrike,
-                                ),
-                              ),
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.03,
-                                width: 10.00.wp,
-                                decoration: BoxDecoration(
-                                    color: pricebutton,
-                                    borderRadius: BorderRadius.circular(2)),
-                                child: Center(
-                                  child: Text(
-                                    '40%',
-                                    style: buttonprice,
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              )
-                            ],
+                            ),
                           )
                         ],
-                      )),
+                      )
+                    ],
+                  ),
                 ),
               );
             },
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 5.0,
-            )));
+                crossAxisCount: 2,
+                mainAxisSpacing: 9.0,
+                childAspectRatio: 2 / 3)));
   }
 }
