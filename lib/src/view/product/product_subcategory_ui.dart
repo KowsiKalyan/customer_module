@@ -50,14 +50,14 @@ class _ProductsubcategoryState extends State<Productsubcategory> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 50.0),
+                        padding: const EdgeInsets.only(left: 40.0),
                         child: Text(
                           'WOMEN \'s FASHION',
                           style: loginbuttonstyle,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 50.0),
+                        padding: const EdgeInsets.only(left: 30.0),
                         child: Icon(
                           Icons.search,
                           color: screenbackground,
