@@ -30,7 +30,7 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Get.to(const ProductDetailsScreen());
+                  // Get.to(const ProductDetailsScreen());
                 },
                 child: Card(
                   child: Column(

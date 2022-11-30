@@ -1,7 +1,5 @@
 import 'dart:developer';
 
-import 'package:customermodule/src/view/product/addtocart.dart';
-
 import '../../../all_packages.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -12,7 +10,6 @@ class ProductDetailsScreen extends StatefulWidget {
 }
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
-  ColorController colorController = Get.put(ColorController());
   List<Color> colors = [appcolor, toptitlecolor, pricebutton, amber];
   var colorindex = 0;
   var textindex = 0;
@@ -36,6 +33,47 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  getaddrocart() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        InkWell(
+          onTap: (() {
+            log('clickkkkkedddddd');
+            Get.to(AddToCart());
+          }),
+          child: Container(
+            height: 5.00.hp,
+            width: 40.00.wp,
+            decoration: BoxDecoration(
+                color: addtocart, borderRadius: BorderRadius.circular(10)),
+            child: Center(
+              child: Text(
+                'ADD TO CART',
+                style: buttontext,
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        ),
+        Container(
+          height: 5.00.hp,
+          width: 40.00.wp,
+          decoration: BoxDecoration(
+              color: appcolor, borderRadius: BorderRadius.circular(10)),
+          child: Center(
+            child: Text(
+              'BUY NOW',
+              style: buttontext,
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 
   @override
@@ -173,46 +211,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 SizedBox(
                   height: 1.00.hp,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: (() {
-                        log('clickkkkkedddddd');
-                        // Get.to(AddToCart());
-                      }),
-                      child: Container(
-                        height: 5.00.hp,
-                        width: 40.00.wp,
-                        decoration: BoxDecoration(
-                            color: addtocart,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Text(
-                            'ADD TO CART',
-                            style: buttontext,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 5.00.hp,
-                      width: 40.00.wp,
-                      decoration: BoxDecoration(
-                          color: appcolor,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Text(
-                          'BUY NOW',
-                          style: buttontext,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ],
-                )
+                getaddrocart()
               ],
             ),
           ),
