@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import '../../../all_packages.dart';
 
 class ColorChoose extends StatefulWidget {
@@ -10,12 +8,7 @@ class ColorChoose extends StatefulWidget {
 }
 
 class _ColorChooseState extends State<ColorChoose> {
-  List<Color> colors = [
-    Colors.pink,
-    Colors.black,
-    Colors.brown,
-    Colors.amber,
-  ];
+  ColorController colorController = Get.put(ColorController());
 
   @override
   Widget build(BuildContext context) {
@@ -32,24 +25,36 @@ class _ColorChooseState extends State<ColorChoose> {
           SizedBox(
             height: 1.00.hp,
           ),
-          InkWell(
-            onTap: (() {
-              // Fluttertoast.showToast(msg: '${colors[index]}');
-            }),
-            child: Container(
-              height: 5.00.hp,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 4,
-                  itemBuilder: ((context, index) {
-                    return Container(
-                      height: 18.00.hp,
-                      width: 14.00.wp,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: colors[index]),
-                    );
-                  })),
-            ),
+          Container(
+            height: 60,
+            width: 300,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: colorController.text.length,
+                itemBuilder: ((context, index) {
+                  return InkWell(
+                    onTap: (() {
+                      setState(() {
+                        colorController.colorindex = index;
+                        colorController.textindex = index;
+                        print(colorController.colorindex.toString());
+                        print(colorController.text[colorController.textindex]
+                            .toString());
+                      });
+                    }),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              color: colorController.colors[index],
+                              shape: BoxShape.circle),
+                        ),
+                      ],
+                    ),
+                  );
+                })),
           ),
         ],
       ),

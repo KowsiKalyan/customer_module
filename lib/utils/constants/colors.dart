@@ -12,3 +12,4 @@ const Color logincolor = Color(0xffFFFFFF);
 const Color pricebutton = Color(0xFF582718);
 const Color card = Color(0xFFEEEDEC);
 const Color addtocart = Color(0xFF4B4A4A);
+const Color amber = Colors.amber;

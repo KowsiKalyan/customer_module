@@ -11,15 +11,15 @@ class _ProductRatingsState extends State<ProductRatings> {
   int _currentRating = 0;
   Widget _buildRatingProductRatings(int index) {
     if (index < _currentRating) {
-      return Icon(Icons.star, color: appcolor);
+      return const Icon(Icons.star, color: appcolor);
     } else {
-      return Icon(Icons.star_border_outlined);
+      return const Icon(Icons.star_border_outlined);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 2.00.hp,
       width: 200,
       child: ListView.builder(
