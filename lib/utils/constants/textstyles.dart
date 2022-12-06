@@ -6,6 +6,38 @@ final toptitleStyle = GoogleFonts.jost(
         fontSize: 14.00.sp,
         color: toptitlecolor,
         fontWeight: FontWeight.w700));
+final listStyle = GoogleFonts.jost(
+    textStyle: TextStyle(
+        letterSpacing: 0.2,
+        fontSize: 12.00.sp,
+        color: toptitlecolor,
+        fontWeight: FontWeight.w700));
+
+final placeorder = GoogleFonts.jost(
+    textStyle: TextStyle(
+        letterSpacing: 0.2,
+        fontSize: 14.00.sp,
+        color: screenbackground,
+        fontWeight: FontWeight.w700));
+
+final totalstyle = GoogleFonts.jost(
+    textStyle: TextStyle(
+        letterSpacing: 0.2,
+        fontSize: 12.00.sp,
+        color: total,
+        fontWeight: FontWeight.w700));
+final totalstyledis = GoogleFonts.jost(
+    textStyle: TextStyle(
+        letterSpacing: 0.2,
+        fontSize: 12.00.sp,
+        color: Colors.green,
+        fontWeight: FontWeight.w700));
+final toptitleStyleappcolor = GoogleFonts.jost(
+    textStyle: TextStyle(
+        letterSpacing: 0.2,
+        fontSize: 14.00.sp,
+        color: appcolor,
+        fontWeight: FontWeight.w700));
 
 final subtitleStyle = GoogleFonts.jost(
     textStyle: TextStyle(
@@ -28,13 +60,23 @@ final product = GoogleFonts.jost(
         fontSize: 10.00.sp,
         color: toptitlecolor,
         fontWeight: FontWeight.w500));
+final productbold = GoogleFonts.jost(
+    textStyle: TextStyle(
+        wordSpacing: 2,
+        letterSpacing: 0.2,
+        fontSize: 10.00.sp,
+        color: toptitlecolor,
+        fontWeight: FontWeight.bold));
 final productprice = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 12.00.sp, color: appcolor, fontWeight: FontWeight.w500));
+final productpriceblue = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 12.00.sp, color: Colors.blue, fontWeight: FontWeight.w500));
 final productpricestrike = GoogleFonts.jost(
     textStyle: TextStyle(
         decoration: TextDecoration.lineThrough,
-        fontSize: 10.00.sp,
+        fontSize: 12.00.sp,
         color: toptitlecolor,
         fontWeight: FontWeight.w500));
 

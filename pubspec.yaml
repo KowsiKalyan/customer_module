@@ -41,6 +41,8 @@ dependencies:
   carousel_slider: ^4.1.1
   fluttertoast: ^8.1.1
   font_awesome_flutter: ^10.2.1
+  group_radio_button: ^1.2.0
+  flutter_slidable: ^2.0.0
   
 
 dev_dependencies:

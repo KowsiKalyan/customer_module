@@ -23,9 +23,10 @@ class _ProductAboutUiState extends State<ProductAboutUi> {
             height: 1.00.hp,
           ),
           Text(
-            '''T-shirts have become one of the most common yet stylish choices of clothing for teenagers. As tees are simple to wear, comfortable, and easy to wash, 
-''',
+            '''T-shirts have become one of the most common yet stylish choices of clothing for teenagers. As tees are simple to wear, comfortable, and easy to wash...
+          ''',
             style: subtitleStyle,
+            textAlign: TextAlign.justify,
           )
         ],
       ),

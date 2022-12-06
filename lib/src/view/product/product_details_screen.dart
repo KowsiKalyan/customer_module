@@ -14,26 +14,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   var colorindex = 0;
   var textindex = 0;
   var text = [
-    'assets/images/01.png',
+    'assets/images/Home-Slider.png',
     'assets/images/02.png',
     'assets/images/03.png',
     'assets/images/04.png'
   ];
-  int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Home Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('Search Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('Profile Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   getaddrocart() {
     return Row(
@@ -42,8 +27,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       children: [
         InkWell(
           onTap: (() {
+            Get.to(AddtocartUi());
             log('clickkkkkedddddd');
-            Get.to(AddToCart());
           }),
           child: Container(
             height: 5.00.hp,
@@ -112,7 +97,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
           child: Container(
             height: 100.00.hp,
             width: 100.00.wp,
@@ -123,6 +108,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   width: 100.00.wp,
                   height: 25.00.hp,
                   decoration: BoxDecoration(
+                    border: Border.all(),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Image.asset(text[textindex]),
@@ -162,7 +148,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   height: 2.00.hp,
                 ),
                 Container(
-                  height: 16.00.hp,
+                  height: 11.00.hp,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -171,9 +157,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         'Color',
                         style: listtitle,
                       ),
+                      SizedBox(
+                        height: 1.00.hp,
+                      ),
                       Container(
-                        height: 10.00.hp,
-                        width: 140.00.wp,
+                        height: 5.00.hp,
+                        width: 100.00.wp,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: colors.length,
@@ -188,9 +177,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                   });
                                 }),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(5.0),
+                                  padding: const EdgeInsets.only(left: 5.0),
                                   child: Container(
-                                    height: 7.00.hp,
+                                    height: 5.00.hp,
                                     width: 10.00.wp,
                                     decoration: BoxDecoration(
                                         color: colors[index],
@@ -203,42 +192,20 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     ],
                   ),
                 ),
+
+                const ProductAboutUi(),
+
                 SizedBox(
                   height: 1.00.hp,
                 ),
-                const ProductAboutUi(),
-                const ProductAboutUi(),
-                SizedBox(
-                  height: 1.00.hp,
-                ),
-                getaddrocart()
+                //getaddrocart()
               ],
             ),
           ),
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //     items: const <BottomNavigationBarItem>[
-      //       BottomNavigationBarItem(
-      //           label: 'hi',
-      //           icon: Icon(Icons.home),
-      //           backgroundColor: Colors.green),
-      //       BottomNavigationBarItem(
-      //           label: 'hi',
-      //           icon: Icon(Icons.search),
-      //           backgroundColor: Colors.yellow),
-      //       BottomNavigationBarItem(
-      //         label: 'hi',
-      //         icon: Icon(Icons.person),
-      //         backgroundColor: Colors.blue,
-      //       ),
-      //     ],
-      //     type: BottomNavigationBarType.shifting,
-      //     currentIndex: _selectedIndex,
-      //     selectedItemColor: Colors.black,
-      //     iconSize: 40,
-      //     onTap: _onItemTapped,
-      //     elevation: 5),
+      bottomNavigationBar:
+          Padding(padding: EdgeInsets.all(8.0), child: getaddrocart()),
     );
   }
 }

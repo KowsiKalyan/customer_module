@@ -6,3 +6,6 @@ export 'product_screen.dart';
 export 'product_subcategory_list.dart';
 export 'product_subcategory_ui.dart';
 export 'addtocart.dart';
+export 'checkoutscreen.dart';
+export 'totalscreen_addtocart.dart';
+export 'paymentscreen.dart';
