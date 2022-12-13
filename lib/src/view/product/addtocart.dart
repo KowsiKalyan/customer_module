@@ -39,51 +39,39 @@ class _AddtocartUiState extends State<AddtocartUi> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: appcolor,
-          toolbarHeight: 10.0.hp,
-          automaticallyImplyLeading: false,
-          title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: (() {
+            elevation: 10,
+            backgroundColor: appcolor,
+            centerTitle: true,
+            leading: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: InkWell(
+                  onTap: () {
                     Get.back();
-                  }),
-                  child: const Icon(
-                    Icons.arrow_back,
-                    color: screenbackground,
-                  ),
-                ),
-                Text(
-                  'MY CART',
-                  style: loginbuttonstyle,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const Icon(
-                      Icons.add_shopping_cart_rounded,
-                      color: screenbackground,
-                      size: 20,
-                    ),
-                    SizedBox(
-                      width: 2.00.wp,
-                    ),
-                    const Icon(
-                      Icons.notifications,
-                      color: screenbackground,
-                      size: 20,
-                    ),
-                  ],
-                )
-              ]),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(30),
+                  },
+                  child: Icon(Icons.arrow_back)),
             ),
-          ),
-        ),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 15.0),
+                child: Icon(
+                  Icons.add_shopping_cart_rounded,
+                  color: screenbackground,
+                  size: 20,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 15.0),
+                child: Icon(
+                  Icons.notifications,
+                  color: screenbackground,
+                  size: 20,
+                ),
+              ),
+            ],
+            title: Text(
+              'MY CART',
+              style: loginbuttonstyle,
+            )),
         body: SingleChildScrollView(
           child: Column(
             children: [

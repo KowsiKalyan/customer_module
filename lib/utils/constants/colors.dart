@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const Color screenbackground = Color(0xffFFFFFF);
-const Color appcolor = Color(0xFFD62A64);
+const Color appcolor = Color.fromARGB(255, 199, 46, 97);
 const Color appcolor1 = Color(0xff27948D);
 const Color toptitlecolor = Color(0xff000000);
 const Color subtitlecolor = Color(0xffABABAB);

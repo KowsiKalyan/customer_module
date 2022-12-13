@@ -36,7 +36,7 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
                   child: Column(
                     children: [
                       Container(
-                        height: 27.00.hp,
+                        height: 20.00.hp,
                         decoration: BoxDecoration(
                             borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(2),
@@ -95,6 +95,6 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 9.0,
-                childAspectRatio: 2 / 3)));
+                childAspectRatio: 2.5 / 3)));
   }
 }

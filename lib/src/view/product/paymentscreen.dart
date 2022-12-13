@@ -4,6 +4,8 @@ import 'dart:ffi';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:customermodule/all_packages.dart';
 
+import 'order_tracking.dart';
+
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
 
@@ -47,38 +49,31 @@ class _PaymentScreenState extends State<PaymentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: appcolor,
-          toolbarHeight: 7.0.hp,
-          automaticallyImplyLeading: false,
-          title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: (() {
+            elevation: 10,
+            backgroundColor: appcolor,
+            centerTitle: true,
+            leading: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: InkWell(
+                  onTap: () {
                     Get.back();
-                  }),
-                  child: const Icon(
-                    Icons.arrow_back,
-                    color: screenbackground,
-                  ),
-                ),
-                Text(
-                  'PAYMENT',
-                  style: loginbuttonstyle,
-                ),
-                const Icon(
+                  },
+                  child: Icon(Icons.arrow_back)),
+            ),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Icon(
                   Icons.notifications,
                   color: screenbackground,
                   size: 20,
                 ),
-              ]),
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(30),
-            ),
-          ),
-        ),
+              ),
+            ],
+            title: Text(
+              'PAYMENT',
+              style: loginbuttonstyle,
+            )),
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -92,7 +87,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 ),
               ),
               Container(
-                height: 65.0.hp,
+                height: 70.0.hp,
                 child: ListView.builder(
                   itemCount: paymentsvia.length,
                   controller: ScrollController(),
@@ -334,63 +329,72 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   ),
                 ),
               ),
-              Container(
-                  padding: EdgeInsets.all(5),
-                  child: Image.asset('assets/images/allpayments.png'))
             ],
           ),
         ),
         bottomNavigationBar: Container(
-          height: 7.0.hp,
+          height: 15.0.hp,
           width: 100.0.wp,
           color: screenbackground,
-          child: Row(
+          child: Column(
             children: [
               Container(
-                padding: EdgeInsets.only(left: 20),
-                height: 7.0.hp,
-                width: 50.0.wp,
-                color: screenbackground,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
+                  padding: EdgeInsets.all(5),
+                  child: Image.asset('assets/images/allpayments.png')),
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(left: 20),
+                    height: 7.0.hp,
+                    width: 50.0.wp,
+                    color: screenbackground,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Total:',
-                          style: subtitleStyle,
+                        Row(
+                          children: [
+                            Text(
+                              'Total:',
+                              style: subtitleStyle,
+                            ),
+                            Text(
+                              '\u{20B9}47',
+                              style: price,
+                            ),
+                          ],
                         ),
                         Text(
-                          '\u{20B9}47',
-                          style: price,
+                          'VAT included,where applicable',
+                          style: formhintstyle,
                         ),
                       ],
                     ),
-                    Text(
-                      'VAT included,where applicable',
-                      style: formhintstyle,
-                    ),
-                  ],
-                ),
-              ),
-              InkWell(
-                onTap: (() {
-                  setState(() {});
-                }),
-                child: Container(
-                  height: 7.0.hp,
-                  width: 45.0.wp,
-                  decoration: BoxDecoration(
-                      color: appcolor, borderRadius: BorderRadius.circular(10)),
-                  child: Center(
-                    child: Text(
-                      'Confirm Order',
-                      style: placeorder,
-                    ),
                   ),
-                ),
-              )
+                  InkWell(
+                    onTap: (() {
+                      setState(() {
+                        Get.to(OrderTrackingUi());
+                      });
+                    }),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 20.0),
+                      child: Container(
+                        height: 5.0.hp,
+                        width: 35.0.wp,
+                        decoration: BoxDecoration(
+                            color: appcolor,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                          child: Text(
+                            'Confirm Order',
+                            style: placeorder,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ));

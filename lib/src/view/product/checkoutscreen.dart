@@ -12,38 +12,31 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: appcolor,
-          toolbarHeight: 10.0.hp,
-          automaticallyImplyLeading: false,
-          title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: (() {
+            elevation: 10,
+            backgroundColor: appcolor,
+            centerTitle: true,
+            leading: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: InkWell(
+                  onTap: () {
                     Get.back();
-                  }),
-                  child: const Icon(
-                    Icons.arrow_back,
-                    color: screenbackground,
-                  ),
-                ),
-                Text(
-                  'CHECKOUT',
-                  style: loginbuttonstyle,
-                ),
-                const Icon(
-                  Icons.notifications,
+                  },
+                  child: Icon(Icons.arrow_back)),
+            ),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Icon(
+                  Icons.add_shopping_cart_rounded,
                   color: screenbackground,
                   size: 20,
                 ),
-              ]),
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(30),
-            ),
-          ),
-        ),
+              ),
+            ],
+            title: Text(
+              'CHECKOUT',
+              style: loginbuttonstyle,
+            )),
         body: SingleChildScrollView(
             child: Column(children: [
           Container(

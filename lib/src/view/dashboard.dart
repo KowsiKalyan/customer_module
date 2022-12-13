@@ -1,13 +1,15 @@
 import 'package:customermodule/all_packages.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+import 'homescreen/home_screen_ui.dart';
+
+class DashboardScreen extends StatefulWidget {
+  const DashboardScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<DashboardScreen> createState() => _DashboardScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DashboardScreenState extends State<DashboardScreen> {
   int _currentIndex = 0;
   final List<Map<String, Widget>> _pages = [
     {
@@ -29,6 +31,40 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+            elevation: 10,
+            backgroundColor: appcolor,
+            centerTitle: true,
+            leading: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: InkWell(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: const Icon(Icons.arrow_back)),
+            ),
+            actions: [
+              const Padding(
+                padding: EdgeInsets.only(right: 15.0),
+                child: Icon(
+                  Icons.add_shopping_cart_rounded,
+                  color: screenbackground,
+                  size: 20,
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(right: 15.0),
+                child: Icon(
+                  Icons.notifications,
+                  color: screenbackground,
+                  size: 20,
+                ),
+              ),
+            ],
+            title: Text(
+              'C SHOP',
+              style: loginbuttonstyle,
+            )),
         backgroundColor: Colors.white,
         body: _pages[_currentIndex]['page'],
         bottomNavigationBar: BottomNavyBar(

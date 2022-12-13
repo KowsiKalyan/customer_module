@@ -16,7 +16,7 @@ final listStyle = GoogleFonts.jost(
 final placeorder = GoogleFonts.jost(
     textStyle: TextStyle(
         letterSpacing: 0.2,
-        fontSize: 14.00.sp,
+        fontSize: 12.00.sp,
         color: screenbackground,
         fontWeight: FontWeight.w700));
 
@@ -113,6 +113,9 @@ final listtitle = GoogleFonts.jost(
 final price = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 18.00.sp, color: appcolor, fontWeight: FontWeight.w600));
+final orderprice = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 16.00.sp, color: appcolor, fontWeight: FontWeight.w600));
 final sort = GoogleFonts.jost(
     textStyle: TextStyle(
         letterSpacing: 1,
@@ -136,7 +139,7 @@ final notificationtitle = GoogleFonts.jost(
         fontWeight: FontWeight.w600));
 final notificationsubtitle = GoogleFonts.jost(
     textStyle: TextStyle(
-        fontSize: 10.00.sp,
+        fontSize: 9.00.sp,
         color: const Color(0xff000000),
         fontWeight: FontWeight.w700));
 final notificationtime = GoogleFonts.jost(
@@ -173,3 +176,11 @@ final buttontext = GoogleFonts.jost(
         fontSize: 12.00.sp,
         color: screenbackground,
         fontWeight: FontWeight.w600));
+final orderdetails = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 10.00.sp,
+        color: const Color(0xff000000),
+        fontWeight: FontWeight.bold));
+final shippingdetails = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 10.00.sp, color: formhintcolor, fontWeight: FontWeight.bold));
