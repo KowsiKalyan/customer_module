@@ -89,7 +89,9 @@ final forminputstyle = GoogleFonts.jost(
 final formhintstyle = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 9.00.sp, color: formhintcolor, fontWeight: FontWeight.w500));
-
+final formhintstylesearch = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 12.00.sp, color: formhintcolor, fontWeight: FontWeight.w500));
 final appcolorstyle = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 9.00.sp, color: appcolor, fontWeight: FontWeight.w500));

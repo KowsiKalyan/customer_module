@@ -1,4 +1,7 @@
 import 'package:customermodule/all_packages.dart';
+import 'package:customermodule/src/view/homescreen/homescreen.dart';
+
+import '../product/categorylist.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,114 +11,91 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final ScrollController _scrollBottomBarController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  width: 100.00.wp,
-                  height: 18.00.hp,
-                  color: screenbackground,
-                ),
-                Positioned(
-                    top: 0,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width * 1,
-                      height: MediaQuery.of(context).size.height * 0.15,
-                      decoration: const BoxDecoration(
-                          color: appcolor,
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20))),
-                    )),
-                Positioned(
-                  top: 50,
-                  left: 30,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      const Icon(
-                        Icons.list,
-                        color: screenbackground,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 100.0),
-                        child: Text(
-                          'C SHOP',
-                          style: loginbuttonstyle,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 100.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            const Icon(
-                              Icons.add_shopping_cart_rounded,
-                              color: screenbackground,
-                              size: 20,
-                            ),
-                            SizedBox(
-                              width: 2.00.wp,
-                            ),
-                            const Icon(
-                              Icons.notifications,
-                              color: screenbackground,
-                              size: 20,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Positioned(
-                  top: 90,
-                  left: 30,
-                  right: 30,
-                  child: Container(
-                    height: 7.00.hp,
-                    width: 80.00.wp,
-                    child: Card(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(
-                            Icons.search,
-                            color: formhintcolor,
-                          ),
-                          Container(
-                              height: 50,
-                              width: 200,
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintStyle: notificationtime,
-                                    hintText: 'search your products'),
-                              )),
-                          Icon(
-                            Icons.mic,
-                            color: formhintcolor,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
-            ImageSliderHome(),
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0, right: 10),
-              child: ProductList(),
-            ),
-          ],
-        ),
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        controller: _scrollBottomBarController,
+        slivers: [
+          SliverPersistentHeader(
+            floating: false,
+            pinned: true,
+            delegate: SearchBarHeaderDelegate(),
+          ),
+          SliverToBoxAdapter(
+            child: Column(children: [
+              ImageSliderHome(),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0, right: 10),
+                child: CategoryList(),
+              )
+            ]),
+          )
+        ],
       ),
     );
+  }
+}
+
+class SearchBarHeaderDelegate extends SliverPersistentHeaderDelegate {
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
+    return Align(
+        alignment: Alignment.topCenter,
+        child: Container(
+          padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+          height: 6.0.hp,
+          color: screenbackground,
+          child: GestureDetector(
+            child: TextFormField(
+              style: subtitleStyle,
+              decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: appcolor,
+                  ),
+                  suffixIcon: Icon(
+                    Icons.mic,
+                    color: appcolor,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                    borderSide: BorderSide(
+                        color: const Color(0xffC6C6C6).withOpacity(0.5),
+                        width: 1),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                    borderSide: BorderSide(
+                        color: const Color(0xffC6C6C6).withOpacity(0.5),
+                        width: 1),
+                  ),
+                  fillColor: const Color(0xffC6C6C6),
+                  hintText: 'Search your products',
+                  contentPadding: const EdgeInsets.only(left: 10),
+                  hintStyle: formhintstylesearch,
+                  border: const OutlineInputBorder(
+                    gapPadding: 4,
+                  )),
+            ),
+          ),
+        ));
+  }
+
+  @override
+  double get maxExtent => 75;
+
+  @override
+  double get minExtent => 75;
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return true;
   }
 }

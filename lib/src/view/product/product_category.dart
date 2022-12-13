@@ -13,9 +13,12 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
     'assets/images/02.png',
     'assets/images/03.png',
     'assets/images/04.png',
-    'assets/images/05.png',
-    'assets/images/06.png',
-    'assets/images/01.png',
+    'assets/images/mobile.jpg',
+    'assets/images/fashion.jpg',
+    'assets/images/beauty.jpg',
+    'assets/images/deals.jpg',
+    'assets/images/movie.jpg',
+    'assets/images/furniture.jpg',
   ];
 
   @override
@@ -24,7 +27,7 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
         scrollDirection: Axis.vertical,
         child: GridView.builder(
             primary: false,
-            itemCount: 4,
+            itemCount: image.length,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
