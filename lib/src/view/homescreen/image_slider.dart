@@ -11,9 +11,9 @@ class _ImageSliderHomeState extends State<ImageSliderHome> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: MediaQuery.of(context).size.height * 0.27,
+        height: 22.0.hp,
         // height: 185,
-        color: Colors.white,
+
         child: CarouselWithIndicatorDemo());
   }
 }

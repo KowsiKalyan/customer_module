@@ -2,9 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:customermodule/all_packages.dart';
 
 final List<String> imgList = [
-  'assets/images/Home-Slider.png',
-  'assets/images/Home-Slider.png',
-  'assets/images/Home-Slider.png',
+  'assets/images/banner1.jpg',
+  'assets/images/banner2.jpg',
+  'assets/images/banner3.jpg',
 ];
 
 final themeMode = ValueNotifier(2);
@@ -24,7 +24,10 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
-        Expanded(
+        Container(
+          height: 18.0.hp,
+          width: 100.0.wp,
+          padding: EdgeInsets.only(left: 20, right: 20),
           child: CarouselSlider(
             items: imageSliders,
             carouselController: _controller,
@@ -48,7 +51,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
               child: Container(
                 width: 1.00.hp,
                 height: 2.00.wp,
-                margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                margin: EdgeInsets.symmetric(horizontal: 4.0, vertical: 4.0),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: (Theme.of(context).brightness == Brightness.dark
@@ -66,13 +69,11 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
-          padding: EdgeInsets.only(left: 20, right: 20),
-          child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
-              child: Stack(
-                children: <Widget>[
-                  Image.asset(item, fit: BoxFit.cover, width: double.infinity),
-                ],
-              )),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    item,
+                  ))),
         ))
     .toList();

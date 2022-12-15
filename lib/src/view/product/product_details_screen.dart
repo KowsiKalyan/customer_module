@@ -87,12 +87,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               )),
         ],
         automaticallyImplyLeading: false,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
-          ),
-        ),
-        toolbarHeight: 12.00.hp,
         backgroundColor: appcolor,
       ),
       body: SingleChildScrollView(

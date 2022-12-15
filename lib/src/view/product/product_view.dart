@@ -9,3 +9,5 @@ export 'addtocart.dart';
 export 'checkoutscreen.dart';
 export 'totalscreen_addtocart.dart';
 export 'paymentscreen.dart';
+export 'electronics_category.dart';
+export 'tshirt_category.dart';

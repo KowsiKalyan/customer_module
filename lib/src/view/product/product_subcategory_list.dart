@@ -10,13 +10,13 @@ class ProductSubcategorylist extends StatefulWidget {
 class _ProductSubcategorylistState extends State<ProductSubcategorylist> {
   // ignore: prefer_final_fields
   var image = [
-    'assets/images/01.png',
-    'assets/images/02.png',
-    'assets/images/03.png',
-    'assets/images/04.png',
-    'assets/images/05.png',
-    'assets/images/06.png',
-    'assets/images/01.png',
+    'assets/images/mobile1.jpg',
+    'assets/images/mobile2.jpg',
+    'assets/images/mobile3.jpg',
+    'assets/images/mobile4.jpg',
+    'assets/images/mobile5.jpg',
+    'assets/images/mobile6.jpg',
+    'assets/images/mobile1.jpg',
   ];
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _ProductSubcategorylistState extends State<ProductSubcategorylist> {
                   child: Column(
                     children: [
                       Container(
-                        height: 20.00.hp,
+                        height: 26.00.hp,
                         decoration: BoxDecoration(
                             borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(2),
@@ -98,6 +98,6 @@ class _ProductSubcategorylistState extends State<ProductSubcategorylist> {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 9.0,
-                childAspectRatio: 2.5 / 3)));
+                childAspectRatio: 2 / 3)));
   }
 }

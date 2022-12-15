@@ -31,7 +31,7 @@ final totalstyledis = GoogleFonts.jost(
         letterSpacing: 0.2,
         fontSize: 12.00.sp,
         color: Colors.green,
-        fontWeight: FontWeight.w700));
+        fontWeight: FontWeight.w500));
 final toptitleStyleappcolor = GoogleFonts.jost(
     textStyle: TextStyle(
         letterSpacing: 0.2,
@@ -144,6 +144,9 @@ final notificationsubtitle = GoogleFonts.jost(
         fontSize: 9.00.sp,
         color: const Color(0xff000000),
         fontWeight: FontWeight.w700));
+final notificationsubtitleappcolor = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 9.00.sp, color: appcolor, fontWeight: FontWeight.w900));
 final notificationtime = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 12.00.sp,
@@ -186,3 +189,23 @@ final orderdetails = GoogleFonts.jost(
 final shippingdetails = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 10.00.sp, color: formhintcolor, fontWeight: FontWeight.bold));
+final showmore = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 9.00.sp,
+        color: screenbackground,
+        fontWeight: FontWeight.w600));
+final dashboardproductprice = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 9.00.sp, color: appcolor, fontWeight: FontWeight.w500));
+final dashboardpricestrike = GoogleFonts.jost(
+    textStyle: TextStyle(
+        decoration: TextDecoration.lineThrough,
+        fontSize: 9.00.sp,
+        color: toptitlecolor,
+        fontWeight: FontWeight.w500));
+final cartstrike = GoogleFonts.jost(
+    textStyle: TextStyle(
+        decoration: TextDecoration.lineThrough,
+        fontSize: 9.00.sp,
+        color: toptitlecolor,
+        fontWeight: FontWeight.w500));

@@ -10,22 +10,31 @@ class TotalScreenaddtocart extends StatefulWidget {
 }
 
 class _TotalScreenaddtocartState extends State<TotalScreenaddtocart> {
+  var price = 1;
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.only(left: 15, right: 15, top: 10),
+          padding: EdgeInsets.only(left: 15, right: 15),
+          child: Text(
+            'Price Details',
+            style: toptitleStyle,
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 15, right: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Big Total',
-                style: totalstyle,
+                'Price (${price} item)',
+                style: subtitleStyle,
               ),
               Text(
-                '\u{20B9}141',
-                style: totalstyle,
+                '\u{20B9}1299',
+                style: subtitleStyle,
               ),
             ],
           ),
@@ -36,28 +45,12 @@ class _TotalScreenaddtocartState extends State<TotalScreenaddtocart> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Bag Discount',
-                style: totalstyle,
+                'Dsicount',
+                style: subtitleStyle,
               ),
               Text(
-                '-\u{20B9}30',
+                '-\u{20B9}1020',
                 style: totalstyledis,
-              ),
-            ],
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.only(left: 15, right: 15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Sub Total',
-                style: totalstyle,
-              ),
-              Text(
-                '\u{20B9}141',
-                style: totalstyle,
               ),
             ],
           ),
@@ -69,26 +62,10 @@ class _TotalScreenaddtocartState extends State<TotalScreenaddtocart> {
             children: [
               Text(
                 'Coupon Discount',
-                style: totalstyle,
+                style: subtitleStyle,
               ),
               Text(
-                '\u{20B9}0',
-                style: totalstyle,
-              ),
-            ],
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.only(left: 15, right: 15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Delivery',
-                style: totalstyle,
-              ),
-              Text(
-                'Free',
+                '\u{20B9}100',
                 style: totalstyledis,
               ),
             ],
@@ -100,15 +77,37 @@ class _TotalScreenaddtocartState extends State<TotalScreenaddtocart> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Total Payable',
+                'Delivery Charges',
+                style: subtitleStyle,
+              ),
+              Text(
+                'Free Delivery',
+                style: totalstyledis,
+              ),
+            ],
+          ),
+        ),
+        Divider(
+          thickness: 1,
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 15, right: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Total Amount',
                 style: totalstyle,
               ),
               Text(
-                '\u{20B9}111',
+                '\u{20B9}171',
                 style: totalstyle,
               ),
             ],
           ),
+        ),
+        Divider(
+          thickness: 1,
         ),
       ],
     );

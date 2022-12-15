@@ -1,7 +1,10 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:customermodule/all_packages.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+
+import '../../controller/addtocart_controller.dart';
 
 class AddtocartUi extends StatefulWidget {
   const AddtocartUi({super.key});
@@ -14,6 +17,7 @@ class _AddtocartUiState extends State<AddtocartUi> {
   TextEditingController quantity = TextEditingController();
   int num = 0;
   var qty = <int>[];
+  var oneSec;
   var dress = [
     'Long Shirt Style',
     'Gray Tunic dress',
@@ -21,17 +25,20 @@ class _AddtocartUiState extends State<AddtocartUi> {
     'chudi'
   ];
   var image = [
-    'assets/images/01.png',
-    'assets/images/02.png',
-    'assets/images/03.png',
+    'assets/images/dress1.jpg',
+    'assets/images/dress2.jpg',
+    'assets/images/dress3.jpg',
     'assets/images/03.png',
   ];
   List numberOfItems = <int>[];
-  var increment;
+  AddToCartcontroller addToCartcontroller = Get.put(AddToCartcontroller());
+
   @override
   void initState() {
     quantity.text = '';
-    setState(() {});
+
+    addToCartcontroller.sec5Timer();
+
     super.initState();
   }
 
@@ -258,24 +265,33 @@ class _AddtocartUiState extends State<AddtocartUi> {
               SizedBox(
                 height: 1.0.hp,
               ),
-              InkWell(
-                onTap: (() {
-                  Get.to(CheckoutScreen());
-                }),
-                child: Container(
-                  height: 6.0.hp,
-                  width: 50.0.wp,
-                  decoration: BoxDecoration(
-                      color: appcolor, borderRadius: BorderRadius.circular(10)),
-                  child: Center(
-                    child: Text(
-                      'Place Order',
-                      style: placeorder,
-                    ),
-                  ),
-                ),
-              )
             ],
+          ),
+        ),
+        bottomNavigationBar: Container(
+          height: 8.0.hp,
+          width: 100.0.wp,
+          color: screenbackground,
+          child: ListTile(
+            title: Text(
+              '\u{20B9}171',
+              style: subtitleStyleappcolor,
+            ),
+            subtitle: Text(
+              '\u{20B9}1299',
+              style: cartstrike,
+            ),
+            trailing: Container(
+              height: 5.0.hp,
+              width: 45.0.wp,
+              color: appcolor,
+              child: Center(
+                child: Text(
+                  'Place Order',
+                  style: placeorder,
+                ),
+              ),
+            ),
           ),
         ));
   }

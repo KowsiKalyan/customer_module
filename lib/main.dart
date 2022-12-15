@@ -1,3 +1,5 @@
+import 'package:customermodule/src/view/splash_screen.dart';
+
 import 'all_packages.dart';
 
 void main() {
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DashboardScreen(),
+      home: SplashScreen(),
     );
   }
 }

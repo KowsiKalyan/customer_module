@@ -8,6 +8,7 @@ class CheckoutScreen extends StatefulWidget {
 }
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,182 +59,34 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           SizedBox(
             height: 2.0.hp,
           ),
-          Container(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: Row(
-              children: [
-                const Icon(
-                  Icons.person,
-                  color: appcolor,
-                  size: 30,
-                ),
-                Container(
-                  color: Colors.white,
-                  height: 6.00.hp, width: 80.00.wp,
-                  // padding: const EdgeInsets.only(
-                  //   left: 20,
-                  //   right: 20,
-                  // ),
-                  child: TextFormField(
-                    style: forminputstyle,
-                    decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide:
-                              const BorderSide(color: appcolor, width: 1),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: BorderSide(
-                              color: const Color(0xffC6C6C6).withOpacity(0.5),
-                              width: 1),
-                        ),
-                        fillColor: const Color(0xffC6C6C6),
-                        hintText: 'user name',
-                        contentPadding: const EdgeInsets.only(left: 10),
-                        hintStyle: formhintstyle,
-                        border: const OutlineInputBorder(
-                          gapPadding: 4,
-                        )),
-                  ),
-                ),
-              ],
-            ),
+          CheckoutInputFields(
+            icon: Icons.person,
+            controller: controller,
+            hintText: 'User Name',
           ),
           SizedBox(
             height: 1.0.hp,
           ),
-          Container(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: Row(
-              children: [
-                const Icon(
-                  Icons.location_on,
-                  color: appcolor,
-                  size: 30,
-                ),
-                Container(
-                  color: Colors.white,
-                  height: 6.00.hp, width: 80.00.wp,
-                  // padding: const EdgeInsets.only(
-                  //   left: 20,
-                  //   right: 20,
-                  // ),
-                  child: TextFormField(
-                    style: forminputstyle,
-                    decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide:
-                              const BorderSide(color: appcolor, width: 1),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: BorderSide(
-                              color: const Color(0xffC6C6C6).withOpacity(0.5),
-                              width: 1),
-                        ),
-                        fillColor: const Color(0xffC6C6C6),
-                        hintText: 'address',
-                        contentPadding: const EdgeInsets.only(left: 10),
-                        hintStyle: formhintstyle,
-                        border: const OutlineInputBorder(
-                          gapPadding: 4,
-                        )),
-                  ),
-                ),
-              ],
-            ),
+          CheckoutInputFields(
+            icon: Icons.location_on,
+            controller: controller,
+            hintText: 'Address',
           ),
           SizedBox(
             height: 1.0.hp,
           ),
-          Container(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: Row(
-              children: [
-                const Icon(
-                  Icons.phone,
-                  color: appcolor,
-                  size: 30,
-                ),
-                Container(
-                  color: Colors.white,
-                  height: 6.00.hp, width: 80.00.wp,
-                  // padding: const EdgeInsets.only(
-                  //   left: 20,
-                  //   right: 20,
-                  // ),
-                  child: TextFormField(
-                    style: forminputstyle,
-                    decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide:
-                              const BorderSide(color: appcolor, width: 1),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: BorderSide(
-                              color: const Color(0xffC6C6C6).withOpacity(0.5),
-                              width: 1),
-                        ),
-                        fillColor: const Color(0xffC6C6C6),
-                        hintText: 'contactnumber',
-                        contentPadding: const EdgeInsets.only(left: 10),
-                        hintStyle: formhintstyle,
-                        border: const OutlineInputBorder(
-                          gapPadding: 4,
-                        )),
-                  ),
-                ),
-              ],
-            ),
+          CheckoutInputFields(
+            icon: Icons.phone,
+            controller: controller,
+            hintText: 'Contact Number',
           ),
           SizedBox(
             height: 1.0.hp,
           ),
-          Container(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: Row(
-              children: [
-                const Icon(
-                  Icons.email,
-                  color: appcolor,
-                  size: 30,
-                ),
-                Container(
-                  color: Colors.white,
-                  height: 6.00.hp, width: 80.00.wp,
-                  // padding: const EdgeInsets.only(
-                  //   left: 20,
-                  //   right: 20,
-                  // ),
-                  child: TextFormField(
-                    style: forminputstyle,
-                    decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide:
-                              const BorderSide(color: appcolor, width: 1),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: BorderSide(
-                              color: const Color(0xffC6C6C6).withOpacity(0.5),
-                              width: 1),
-                        ),
-                        fillColor: const Color(0xffC6C6C6),
-                        hintText: 'e-mail',
-                        contentPadding: const EdgeInsets.only(left: 10),
-                        hintStyle: formhintstyle,
-                        border: const OutlineInputBorder(
-                          gapPadding: 4,
-                        )),
-                  ),
-                ),
-              ],
-            ),
+          CheckoutInputFields(
+            icon: Icons.email,
+            controller: controller,
+            hintText: 'E-mail',
           ),
           Container(
               padding: const EdgeInsets.only(top: 10),
@@ -241,19 +94,16 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               child: Card(
                   elevation: 1,
                   child: Row(children: [
-                    Radio(
-                        value: "radio value",
-                        groupValue: "group value",
-                        onChanged: (value) {
-                          print(value); //selected value
-                        }),
-                    Container(
-                      height: 15.0.hp,
-                      width: 30.0.wp,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          image: const DecorationImage(
-                              image: AssetImage('assets/images/01.png'))),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 18.0),
+                      child: Container(
+                        height: 15.0.hp,
+                        width: 30.0.wp,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: const DecorationImage(
+                                image: AssetImage('assets/images/dress2.jpg'))),
+                      ),
                     ),
                     Padding(
                         padding: const EdgeInsets.only(left: 15.0),
