@@ -27,10 +27,13 @@ final totalstyle = GoogleFonts.jost(
         color: total,
         fontWeight: FontWeight.w700));
 final totalstyledis = GoogleFonts.jost(
+    textStyle:
+        TextStyle(letterSpacing: 0.2, fontSize: 12.00.sp, color: Colors.green));
+final productdetaildis = GoogleFonts.jost(
     textStyle: TextStyle(
         letterSpacing: 0.2,
-        fontSize: 12.00.sp,
-        color: Colors.green,
+        fontSize: 14.00.sp,
+        color: Colors.blue,
         fontWeight: FontWeight.w500));
 final toptitleStyleappcolor = GoogleFonts.jost(
     textStyle: TextStyle(
@@ -208,4 +211,21 @@ final cartstrike = GoogleFonts.jost(
         decoration: TextDecoration.lineThrough,
         fontSize: 9.00.sp,
         color: toptitlecolor,
+        fontWeight: FontWeight.w500));
+
+final categorystyle = GoogleFonts.jost(
+    textStyle: TextStyle(
+        wordSpacing: 1,
+        letterSpacing: 0.1,
+        fontSize: 9.00.sp,
+        color: appcolor,
+        fontWeight: FontWeight.w500));
+final categoryprice = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 10.00.sp, color: toptitlecolor, fontWeight: FontWeight.w600));
+final productdetailpricestrike = GoogleFonts.jost(
+    textStyle: TextStyle(
+        decoration: TextDecoration.lineThrough,
+        fontSize: 10.00.sp,
+        color: formhintcolor,
         fontWeight: FontWeight.w500));

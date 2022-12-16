@@ -14,3 +14,4 @@ const Color card = Color(0xFFEEEDEC);
 const Color addtocart = Color(0xFF4B4A4A);
 const Color amber = Colors.amber;
 const Color total = Color(0xFF525050);
+const Color purple = Color(0x400000);

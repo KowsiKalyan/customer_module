@@ -28,13 +28,17 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
     'GEHU GARMENTS',
     'POSHAK HUB',
     'SKYASIA',
-    'VASANT APPAREL'
+    'VASANT APPAREL',
+    'TRENDS',
+    'MAX'
   ];
   var productnames = [
     'Women printed Rayon kurtikfjjdshfgshkj',
     'Women floral printed kurti',
     'women printed crepe kurti',
-    'women embroided crepe kurti'
+    'women embroided crepe kurti',
+    'Max kurti',
+    'Trends kurti'
   ];
   List<bool> iconindex = [];
   bool _showBox = true;
@@ -59,7 +63,7 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
         scrollDirection: Axis.vertical,
         child: GridView.builder(
             primary: false,
-            itemCount: 4,
+            itemCount: 6,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
@@ -78,7 +82,7 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
                   child: Stack(
                     children: [
                       Container(
-                        height: 26.00.hp,
+                        height: 16.00.hp,
                         decoration: BoxDecoration(
                             borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(2),
@@ -88,50 +92,36 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
                                 image: AssetImage(image[index]))),
                       ),
                       Positioned(
-                          top: 5,
-                          right: 0,
-                          child: CircleAvatar(
-                            radius: 15,
-                            backgroundColor: screenbackground,
-                            child: iconindex[index] == true
-                                ? Icon(
-                                    Icons.favorite_border,
-                                    color: appcolor,
-                                    size: 20,
-                                  )
-                                : Icon(
-                                    Icons.favorite,
-                                    color: appcolor,
-                                    size: 20,
-                                  ),
+                          bottom: 0,
+                          child: Container(
+                            height: 5.0.hp,
+                            width: 30.0.wp,
+                            color: screenbackground,
                           )),
                       Positioned(
-                        bottom: 12.0.hp,
+                        bottom: 16,
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: Text(
                             garmentsname[index],
-                            style: subtitleStyle,
+                            style: categorystyle,
                             textAlign: TextAlign.start,
                           ),
                         ),
                       ),
+                      // Align(
+                      //   alignment: Alignment.topLeft,
+                      //   child: SizedBox(
+                      //     width: 50.0.wp,
+                      //     child: Text(productnames[index],
+                      //         maxLines: 1,
+                      //         overflow: TextOverflow.ellipsis,
+                      //         softWrap: false,
+                      //         style: formhintstyle),
+                      //   ),
+                      // ),
                       Positioned(
-                        bottom: 10.0.hp,
-                        child: Align(
-                          alignment: Alignment.topLeft,
-                          child: SizedBox(
-                            width: 50.0.wp,
-                            child: Text(productnames[index],
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                softWrap: false,
-                                style: formhintstyle),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 7.0.hp,
+                        bottom: 0,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,7 +130,7 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
                               fit: BoxFit.cover,
                               child: Text(
                                 '\$1,099',
-                                style: productprice,
+                                style: categoryprice,
                               ),
                             ),
                             SizedBox(
@@ -150,75 +140,36 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
                               fit: BoxFit.cover,
                               child: Text(
                                 '\$1,099',
-                                style: productpricestrike,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 2.0.wp,
-                            ),
-                            Container(
-                              height: MediaQuery.of(context).size.height * 0.03,
-                              width: 10.00.wp,
-                              decoration: BoxDecoration(
-                                  color: appcolor,
-                                  borderRadius: BorderRadius.circular(2)),
-                              child: Center(
-                                child: Text(
-                                  '40%',
-                                  style: buttonprice,
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 4.0.hp,
-                        child: Row(
-                          children: [
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: FittedBox(
-                                child: Text(
-                                  'free delivery',
-                                  style: totalstyledis,
-                                  textAlign: TextAlign.start,
-                                ),
+                                style: categoryprice,
                               ),
                             ),
                           ],
                         ),
                       ),
                       Positioned(
-                          bottom: 0.0.hp,
+                          top: 0,
                           child: Container(
-                            height: 3.0.hp,
-                            width: 20.0.wp,
-                            color: amber,
+                            height: MediaQuery.of(context).size.height * 0.03,
+                            width: 10.00.wp,
+                            decoration: BoxDecoration(
+                                color: appcolor,
+                                borderRadius: BorderRadius.circular(2)),
                             child: Center(
-                                child: Text(
-                              'Hot Deals',
-                              style: subtitleStyle,
-                            )),
-                          )),
-                      Positioned(
-                        bottom: 0.0.hp,
-                        right: 5.0,
-                        child: Icon(
-                          Icons.share,
-                          color: appcolor,
-                          size: 20,
-                        ),
-                      )
+                              child: Text(
+                                '20%',
+                                style: buttonprice,
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ))
                     ],
                   ),
                 ),
               );
             },
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 9.0,
-                childAspectRatio: 1.60 / 3)));
+                crossAxisCount: 3,
+                mainAxisSpacing: 2.0,
+                childAspectRatio: 2.40 / 3)));
   }
 }

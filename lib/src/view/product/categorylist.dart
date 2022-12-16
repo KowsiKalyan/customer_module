@@ -62,31 +62,34 @@ class _CategoryListState extends State<CategoryList> {
                 scrollDirection: Axis.horizontal,
                 itemCount: image.length,
                 itemBuilder: ((context, index) {
-                  return Column(
-                    children: [
-                      Container(
-                        height: 6.00.hp,
-                        width: 9.00.hp,
-                        decoration: const BoxDecoration(
-                            shape: BoxShape.circle, color: appcolor),
-                        child: InkWell(
-                            onTap: (() {
-                              Get.to(Productsubcategory(
-                                index: index.toString(),
-                                text: name[index],
-                              ));
-                            }),
-                            child: CircleAvatar(
-                              radius: 20,
-                              backgroundImage:
-                                  AssetImage(image[index].toString()),
-                            )),
-                      ),
-                      Text(
-                        name[index],
-                        style: notificationsubtitleappcolor,
-                      )
-                    ],
+                  return Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 6.00.hp,
+                          width: 9.00.hp,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle, color: appcolor),
+                          child: InkWell(
+                              onTap: (() {
+                                Get.to(Productsubcategory(
+                                  index: index.toString(),
+                                  text: name[index],
+                                ));
+                              }),
+                              child: CircleAvatar(
+                                radius: 20,
+                                backgroundImage:
+                                    AssetImage(image[index].toString()),
+                              )),
+                        ),
+                        Text(
+                          name[index],
+                          style: notificationsubtitleappcolor,
+                        )
+                      ],
+                    ),
                   );
                 })),
           ),

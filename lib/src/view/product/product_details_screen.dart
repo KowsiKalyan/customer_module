@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import '../../../all_packages.dart';
@@ -19,6 +20,33 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     'assets/images/03.png',
     'assets/images/04.png'
   ];
+  var firstBuild = 0;
+  Timer? timer;
+  // show Open Dialog method
+  _showOpenDialog(context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Dialog(
+            child: Container(
+              color: appcolor,
+              height: 100,
+              width: 200,
+              child: Image.asset('assets/images/splash.gif'),
+            ),
+          );
+        });
+  }
+
+  // @override
+  // void initState() {
+  //   timer = Timer.periodic(Duration(seconds: 3), (timer) {
+  //     _showOpenDialog(context);
+  //   });
+  //   timer!.cancel();
+
+  //   super.initState();
+  // }
 
   getaddrocart() {
     return Row(
@@ -44,6 +72,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             ),
           ),
         ),
+        // _showOpenDialog(context),
         Container(
           height: 5.00.hp,
           width: 40.00.wp,
@@ -90,111 +119,142 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         backgroundColor: appcolor,
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Padding(
           padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
-          child: Container(
-            height: 100.00.hp,
-            width: 100.00.wp,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 100.00.wp,
-                  height: 25.00.hp,
-                  decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Image.asset(text[textindex]),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 100.00.wp,
+                height: 25.00.hp,
+                decoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                SizedBox(
-                  height: 2.00.hp,
+                child: Image.asset(text[textindex]),
+              ),
+              SizedBox(
+                height: 2.00.hp,
+              ),
+              Container(
+                height: 10.00.hp,
+                width: 100.00.wp,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Smart Watch',
+                          style: listtitle,
+                        ),
+                        Text(
+                          '\u20B9 345.00',
+                          style: price,
+                        )
+                      ],
+                    ),
+                    Text(
+                      'WOMEN\'s',
+                      style: subtitleStyleappcolor,
+                    ),
+                    const ProductRatings()
+                  ],
                 ),
-                Container(
-                  height: 10.00.hp,
-                  width: 100.00.wp,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Smart Watch',
-                            style: listtitle,
-                          ),
-                          Text(
-                            '\u20B9 345.00',
-                            style: price,
-                          )
-                        ],
-                      ),
-                      Text(
-                        'WOMEN\'s',
-                        style: subtitleStyleappcolor,
-                      ),
-                      const ProductRatings()
-                    ],
-                  ),
+              ),
+
+              Container(
+                height: 10.00.hp,
+                width: 100.00.wp,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          '79% offer',
+                          style: productdetaildis,
+                        ),
+                        SizedBox(
+                          width: 2.00.hp,
+                        ),
+                        Text(
+                          '\u20B9 1345.00',
+                          style: productdetailpricestrike,
+                        ),
+                        SizedBox(
+                          width: 1.00.hp,
+                        ),
+                        Text(
+                          '\u20B9 345.00',
+                          style: productprice,
+                        )
+                      ],
+                    ),
+                    Text(
+                      'free delivery',
+                      style: totalstyledis,
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  height: 2.00.hp,
-                ),
-                Container(
-                  height: 11.00.hp,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Color',
-                        style: listtitle,
-                      ),
-                      SizedBox(
-                        height: 1.00.hp,
-                      ),
-                      Container(
-                        height: 5.00.hp,
-                        width: 100.00.wp,
-                        child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: colors.length,
-                            itemBuilder: ((context, index) {
-                              return InkWell(
-                                onTap: (() {
-                                  setState(() {
-                                    colorindex = index;
-                                    textindex = index;
-                                    print(colorindex.toString());
-                                    print(text[textindex].toString());
-                                  });
-                                }),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 5.0),
-                                  child: Container(
-                                    height: 5.00.hp,
-                                    width: 10.00.wp,
-                                    decoration: BoxDecoration(
-                                        color: colors[index],
-                                        shape: BoxShape.circle),
-                                  ),
+              ),
+              Container(
+                height: 11.00.hp,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Color',
+                      style: listtitle,
+                    ),
+                    SizedBox(
+                      height: 1.00.hp,
+                    ),
+                    Container(
+                      height: 5.00.hp,
+                      width: 100.00.wp,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: colors.length,
+                          itemBuilder: ((context, index) {
+                            return InkWell(
+                              onTap: (() {
+                                setState(() {
+                                  colorindex = index;
+                                  textindex = index;
+                                  print(colorindex.toString());
+                                  print(text[textindex].toString());
+                                });
+                              }),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 5.0),
+                                child: Container(
+                                  height: 5.00.hp,
+                                  width: 10.00.wp,
+                                  decoration: BoxDecoration(
+                                      color: colors[index],
+                                      shape: BoxShape.circle),
                                 ),
-                              );
-                            })),
-                      ),
-                    ],
-                  ),
+                              ),
+                            );
+                          })),
+                    ),
+                  ],
                 ),
+              ),
 
-                const ProductAboutUi(),
+              const ProductAboutUi(),
 
-                SizedBox(
-                  height: 1.00.hp,
-                ),
-                //getaddrocart()
-              ],
-            ),
+              SizedBox(
+                height: 1.00.hp,
+              ),
+              //getaddrocart()
+            ],
           ),
         ),
       ),

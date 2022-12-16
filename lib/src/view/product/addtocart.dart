@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:customermodule/all_packages.dart';
+import 'package:customermodule/src/view/product/order_tracking.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../../controller/addtocart_controller.dart';
@@ -281,14 +282,19 @@ class _AddtocartUiState extends State<AddtocartUi> {
               '\u{20B9}1299',
               style: cartstrike,
             ),
-            trailing: Container(
-              height: 5.0.hp,
-              width: 45.0.wp,
-              color: appcolor,
-              child: Center(
-                child: Text(
-                  'Place Order',
-                  style: placeorder,
+            trailing: InkWell(
+              onTap: (() {
+                Get.to(OrderTrackingUi());
+              }),
+              child: Container(
+                height: 5.0.hp,
+                width: 45.0.wp,
+                color: Colors.orange,
+                child: Center(
+                  child: Text(
+                    'Place Order',
+                    style: toptitleStyle,
+                  ),
                 ),
               ),
             ),

@@ -16,55 +16,59 @@ class _DashboardScreenState extends State<DashboardScreen> {
       'page': const HomeScreen(),
     },
     {
-      'page': const HistoryScreen(),
+      'page': const CategoryScreen(),
     },
     {
-      'page': const NotificationScreen(),
+      'page': ExploreScreen(),
     },
     {
-      'page': const MenuScreen(),
+      'page': const CartScreen(),
     },
     {
-      'page': const HistoryScreen(),
+      'page': const ProfileScreen(),
     },
   ];
+  getappbar() {
+    return AppBar(
+        elevation: 10,
+        backgroundColor: appcolor,
+        centerTitle: true,
+        leading: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: InkWell(
+              onTap: () {
+                Get.back();
+              },
+              child: const Icon(Icons.arrow_back)),
+        ),
+        actions: [
+          const Padding(
+            padding: EdgeInsets.only(right: 15.0),
+            child: Icon(
+              Icons.add_shopping_cart_rounded,
+              color: screenbackground,
+              size: 20,
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(right: 15.0),
+            child: Icon(
+              Icons.notifications,
+              color: screenbackground,
+              size: 20,
+            ),
+          ),
+        ],
+        title: Text(
+          'C SHOP',
+          style: loginbuttonstyle,
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            elevation: 10,
-            backgroundColor: appcolor,
-            centerTitle: true,
-            leading: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: InkWell(
-                  onTap: () {
-                    Get.back();
-                  },
-                  child: const Icon(Icons.arrow_back)),
-            ),
-            actions: [
-              const Padding(
-                padding: EdgeInsets.only(right: 15.0),
-                child: Icon(
-                  Icons.add_shopping_cart_rounded,
-                  color: screenbackground,
-                  size: 20,
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(right: 15.0),
-                child: Icon(
-                  Icons.notifications,
-                  color: screenbackground,
-                  size: 20,
-                ),
-              ),
-            ],
-            title: Text(
-              'C SHOP',
-              style: loginbuttonstyle,
-            )),
+        appBar: _currentIndex == 0 ? getappbar() : null,
         backgroundColor: Colors.white,
         body: _pages[_currentIndex]['page'],
         bottomNavigationBar: BottomNavyBar(

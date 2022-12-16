@@ -1,6 +1,7 @@
 export 'dashboard.dart';
 export 'product/product_view.dart';
 
-export 'menu screen/menu.dart';
-export 'notificationscreen/notification.dart';
-export 'historyscreen/history.dart';
+export 'cart/cart.dart';
+export 'explore/explore.dart';
+export 'category/category.dart';
+export 'profile/profile_screen.dart';
