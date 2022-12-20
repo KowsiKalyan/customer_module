@@ -42,12 +42,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
   ];
   var productname = [
     'earpods',
-    'mens fashion',
-    'womens fashion',
-    'wall decoration',
+    'mens&\nfashion',
+    'womens&\nfashion',
+    'wall decor',
     'mobile',
     'watch',
-    'outdoor Garden',
+    'outdoor&\nGarden',
     'decor',
     'fashion',
     'sofa',
@@ -60,7 +60,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     'charger',
     'mask',
     'mobilecover',
-    'vegtables',
+    'vegetables',
     'eye wear',
     'funiture',
     'pharmacy',
@@ -68,7 +68,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     'drinks',
     'baby care',
     'couche',
-    'crafts and gifts'
+    'crafts&gifts'
   ];
   @override
   void initState() {
@@ -103,47 +103,56 @@ class _CategoryScreenState extends State<CategoryScreen> {
         ],
         backgroundColor: appcolor,
       ),
-      body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: GridView.builder(
-              primary: false,
-              itemCount: image.length,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {
-                    Get.to(Productsubcategory(
-                      index: index.toString(),
-                      text: '',
-                    ));
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 2.0.hp),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 8.0.hp,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(image[index])),
-                              shape: BoxShape.circle,
-                              color: appcolor),
-                        ),
-                        Text(
-                          productname[index],
-                          style: categoryprice,
-                        )
-                      ],
+      body: Scaffold(
+        backgroundColor: bgcolor,
+        body: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: GridView.builder(
+                primary: false,
+                itemCount: image.length,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      Get.to(Productsubcategory(
+                        index: index.toString(),
+                        text: '',
+                      ));
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: 2.0.hp, left: 1.0.wp, right: 1.0.wp),
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 7.0.hp,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(image[index])),
+                                shape: BoxShape.circle,
+                                color: appcolor),
+                          ),
+                          Container(
+                            width: 32.0.wp,
+                            child: Center(
+                              child: Text(
+                                productname[index],
+                                style: orderdetails,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              },
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  mainAxisSpacing: 1.0,
-                  childAspectRatio: 2.5 / 3))),
+                  );
+                },
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4,
+                    mainAxisSpacing: 1.0,
+                    childAspectRatio: 2.5 / 3))),
+      ),
     );
   }
 }

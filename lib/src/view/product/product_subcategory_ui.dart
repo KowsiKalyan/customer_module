@@ -43,32 +43,35 @@ class _ProductsubcategoryState extends State<Productsubcategory> {
             'WOMEN \'s FASHION',
             style: loginbuttonstyle,
           )),
-      body: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        controller: _scrollBottomBarController,
-        slivers: [
-          SliverPersistentHeader(
-            floating: false,
-            pinned: true,
-            delegate: SearchBarHeaderDelegates(),
-          ),
-          SliverToBoxAdapter(
-            child: Column(children: [
-              ProductSubcategorylist(),
-              ProductSubcategorylist(),
-              Padding(
-                padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-                child: Card(
-                  child: Image.asset(
-                    'assets/images/Offer.png',
-                    height: 15.00.hp,
-                    fit: BoxFit.cover,
+      body: Scaffold(
+        backgroundColor: bgcolor,
+        body: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          controller: _scrollBottomBarController,
+          slivers: [
+            SliverPersistentHeader(
+              floating: false,
+              pinned: true,
+              delegate: SearchBarHeaderDelegates(),
+            ),
+            SliverToBoxAdapter(
+              child: Column(children: [
+                ProductSubcategorylist(),
+                ProductSubcategorylist(),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                  child: Card(
+                    child: Image.asset(
+                      'assets/images/Offer.png',
+                      height: 15.00.hp,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
-            ]),
-          )
-        ],
+              ]),
+            )
+          ],
+        ),
       ),
 
       // Container(
@@ -150,7 +153,7 @@ class SearchBarHeaderDelegates extends SliverPersistentHeaderDelegate {
       alignment: Alignment.topCenter,
       child: Container(
         padding: const EdgeInsets.all(5),
-        color: screenbackground,
+        color: bgcolor,
         child: GestureDetector(
           child: Card(
               child: Row(

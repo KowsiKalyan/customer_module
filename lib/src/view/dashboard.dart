@@ -22,10 +22,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
       'page': ExploreScreen(),
     },
     {
-      'page': const CartScreen(),
+      'page': const AddtocartUi(),
     },
     {
-      'page': const ProfileScreen(),
+      'page': MenuScreen(),
     },
   ];
   getappbar() {
@@ -69,7 +69,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: _currentIndex == 0 ? getappbar() : null,
-        backgroundColor: Colors.white,
+        backgroundColor: bgcolor,
         body: _pages[_currentIndex]['page'],
         bottomNavigationBar: BottomNavyBar(
           containerHeight: 70,

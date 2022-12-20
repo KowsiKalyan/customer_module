@@ -23,27 +23,30 @@ class SmallActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.06,
-      width: MediaQuery.of(context).size.width * 0.4,
-      decoration: BoxDecoration(
-          color: bgcolor,
-          border: Border.all(
-            color: bordercolor,
-          ),
-          borderRadius: BorderRadius.circular(5)),
-      child: ElevatedButton(
-        onPressed: press,
-        style: ElevatedButton.styleFrom(
-            primary: bgcolor,
-            elevation: elevationvalue,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5),
+    return Align(
+      alignment: Alignment.bottomRight,
+      child: Container(
+        height: 5.0.hp,
+        width: 30.0.wp,
+        decoration: BoxDecoration(
+            color: bgcolor,
+            border: Border.all(
+              color: bordercolor,
             ),
-            textStyle: style),
-        child: Text(
-          text,
-          style: style,
+            borderRadius: BorderRadius.circular(5)),
+        child: ElevatedButton(
+          onPressed: press,
+          style: ElevatedButton.styleFrom(
+              primary: bgcolor,
+              elevation: elevationvalue,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5),
+              ),
+              textStyle: style),
+          child: Text(
+            text,
+            style: style,
+          ),
         ),
       ),
     );

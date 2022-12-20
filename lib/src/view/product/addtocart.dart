@@ -16,18 +16,22 @@ class AddtocartUi extends StatefulWidget {
 
 class _AddtocartUiState extends State<AddtocartUi> {
   TextEditingController quantity = TextEditingController();
-  int num = 0;
+  int num = 1;
   var qty = <int>[];
   var oneSec;
   var dress = [
     'Long Shirt Style',
     'Gray Tunic dress',
     'Dubai Style Abaya',
+    'chudi',
+    'chudi',
     'chudi'
   ];
   var image = [
     'assets/images/dress1.jpg',
     'assets/images/dress2.jpg',
+    'assets/images/dress3.jpg',
+    'assets/images/03.png',
     'assets/images/dress3.jpg',
     'assets/images/03.png',
   ];
@@ -36,8 +40,6 @@ class _AddtocartUiState extends State<AddtocartUi> {
 
   @override
   void initState() {
-    quantity.text = '';
-
     addToCartcontroller.sec5Timer();
 
     super.initState();
@@ -80,194 +82,179 @@ class _AddtocartUiState extends State<AddtocartUi> {
               'MY CART',
               style: loginbuttonstyle,
             )),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                  height: 60.0.hp,
-                  width: 100.00.wp,
-                  child: ListView.builder(
-                      itemCount: dress.length,
-                      itemBuilder: ((context, index) {
-                        for (int i = 0; i < dress.length; i++) {
-                          qty.add(0);
-                        }
-                        return Slidable(
-                          key: UniqueKey(),
-                          endActionPane: ActionPane(
-                            dismissible: DismissiblePane(onDismissed: () {
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                  itemCount: dress.length,
+                  itemBuilder: ((context, index) {
+                    for (int i = 0; i < dress.length; i++) {
+                      qty.add(0);
+                    }
+                    return Slidable(
+                      key: UniqueKey(),
+                      endActionPane: ActionPane(
+                        dismissible: DismissiblePane(onDismissed: () {
+                          dress.removeAt(index);
+                          setState(() {
+                            Fluttertoast.showToast(msg: 'Deleted Successfully');
+                          });
+                        }),
+                        motion: const DrawerMotion(),
+                        children: [
+                          SlidableAction(
+                            autoClose: true,
+                            flex: 1,
+                            onPressed: (value) {
                               dress.removeAt(index);
-                              setState(() {
-                                Fluttertoast.showToast(
-                                    msg: 'Deleted Successfully');
-                              });
-                            }),
-                            motion: const DrawerMotion(),
-                            children: [
-                              SlidableAction(
-                                autoClose: true,
-                                flex: 1,
-                                onPressed: (value) {
-                                  dress.removeAt(index);
-                                  setState(() {});
-                                },
-                                backgroundColor: appcolor1,
-                                foregroundColor: Colors.white,
-                                icon: Icons.delete,
-                                label: 'Delete',
-                              ),
-                            ],
+                              setState(() {});
+                            },
+                            backgroundColor: appcolor1,
+                            foregroundColor: Colors.white,
+                            icon: Icons.delete,
+                            label: 'Delete',
                           ),
-                          child: Container(
-                            padding: EdgeInsets.only(top: 10),
-                            height: 20.0.hp,
-                            child: Card(
-                                elevation: 1,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 28),
-                                  child: Row(children: [
-                                    Container(
-                                      height: 15.0.hp,
-                                      width: 25.0.wp,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                image[index],
-                                              ))),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 20.0),
-                                      child: Column(
+                        ],
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.only(top: 10),
+                        height: 20.0.hp,
+                        child: Card(
+                            elevation: 1,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 28),
+                              child: Row(children: [
+                                Container(
+                                  height: 15.0.hp,
+                                  width: 25.0.wp,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                            image[index],
+                                          ))),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 20.0),
+                                  child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          dress[index].toString(),
+                                          style: listStyle,
+                                        ),
+                                        Text(
+                                          'Shirt Wool dress',
+                                          style: product,
+                                        ),
+                                        Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceBetween,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              dress[index].toString(),
-                                              style: listStyle,
+                                            FittedBox(
+                                              fit: BoxFit.cover,
+                                              child: Text(
+                                                '\$1,099',
+                                                style: productpriceblue,
+                                              ),
                                             ),
-                                            Text(
-                                              'Shirt Wool dress',
-                                              style: product,
+                                            SizedBox(
+                                              width: 2.0.wp,
                                             ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                FittedBox(
-                                                  fit: BoxFit.cover,
-                                                  child: Text(
-                                                    '\$1,099',
-                                                    style: productpriceblue,
-                                                  ),
+                                            FittedBox(
+                                              fit: BoxFit.cover,
+                                              child: Text(
+                                                '\$1,099',
+                                                style: productpricestrike,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Container(
+                                          height: 3.0.hp,
+                                          width: 50.0.wp,
+                                          child: ListView.builder(
+                                              scrollDirection: Axis.horizontal,
+                                              itemCount: 5,
+                                              itemBuilder: ((context, value) {
+                                                return Icon(
+                                                  Icons.star,
+                                                  size: 16,
+                                                  color: amber,
+                                                );
+                                              })),
+                                        ),
+                                        Row(
+                                          children: [
+                                            InkWell(
+                                              onTap: (() {
+                                                setState(() {
+                                                  qty[index] = qty[index] - 1;
+                                                });
+                                              }),
+                                              child: Container(
+                                                height: 3.0.hp,
+                                                width: 7.0.wp,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                  color: appcolor,
                                                 ),
-                                                SizedBox(
-                                                  width: 2.0.wp,
+                                                child: Icon(
+                                                  Icons.remove,
+                                                  size: 16,
+                                                  color: screenbackground,
                                                 ),
-                                                FittedBox(
-                                                  fit: BoxFit.cover,
-                                                  child: Text(
-                                                    '\$1,099',
-                                                    style: productpricestrike,
-                                                  ),
-                                                ),
-                                              ],
+                                              ),
                                             ),
                                             Container(
-                                              height: 3.0.hp,
-                                              width: 50.0.wp,
-                                              child: ListView.builder(
-                                                  scrollDirection:
-                                                      Axis.horizontal,
-                                                  itemCount: 5,
-                                                  itemBuilder:
-                                                      ((context, value) {
-                                                    return Icon(
-                                                      Icons.star,
-                                                      size: 16,
-                                                      color: amber,
-                                                    );
-                                                  })),
+                                                height: 4.0.hp,
+                                                width: 8.0.wp,
+                                                decoration: BoxDecoration(),
+                                                child: Center(
+                                                    child: qty[index] == 0
+                                                        ? Text('1')
+                                                        : Text(qty[index]
+                                                            .toString()))),
+                                            InkWell(
+                                              onTap: (() {
+                                                setState(() {
+                                                  qty[index] = qty[index] + 1;
+                                                });
+                                              }),
+                                              child: Container(
+                                                height: 3.0.hp,
+                                                width: 7.0.wp,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                  color: appcolor,
+                                                ),
+                                                child: Icon(
+                                                  Icons.add,
+                                                  color: screenbackground,
+                                                  size: 16,
+                                                ),
+                                              ),
                                             ),
-                                            Row(
-                                              children: [
-                                                InkWell(
-                                                  onTap: (() {
-                                                    setState(() {
-                                                      qty[index] =
-                                                          qty[index] - 1;
-                                                    });
-                                                  }),
-                                                  child: Container(
-                                                    height: 3.0.hp,
-                                                    width: 7.0.wp,
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              5),
-                                                      color: appcolor,
-                                                    ),
-                                                    child: Icon(
-                                                      Icons.remove,
-                                                      size: 16,
-                                                      color: screenbackground,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Container(
-                                                  height: 4.0.hp,
-                                                  width: 8.0.wp,
-                                                  decoration: BoxDecoration(),
-                                                  child: Center(
-                                                      child: Text(qty[index]
-                                                          .toString())),
-                                                ),
-                                                InkWell(
-                                                  onTap: (() {
-                                                    setState(() {
-                                                      qty[index] =
-                                                          qty[index] + 1;
-                                                    });
-                                                  }),
-                                                  child: Container(
-                                                    height: 3.0.hp,
-                                                    width: 7.0.wp,
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              5),
-                                                      color: appcolor,
-                                                    ),
-                                                    child: Icon(
-                                                      Icons.add,
-                                                      color: screenbackground,
-                                                      size: 16,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            )
-                                          ]),
-                                    )
-                                  ]),
-                                )),
-                          ),
-                        );
-                      }))),
-              TotalScreenaddtocart(),
-              SizedBox(
-                height: 1.0.hp,
-              ),
-            ],
-          ),
+                                          ],
+                                        )
+                                      ]),
+                                )
+                              ]),
+                            )),
+                      ),
+                    );
+                  })),
+            ),
+            TotalScreenaddtocart(),
+          ],
         ),
         bottomNavigationBar: Container(
           height: 8.0.hp,

@@ -11,3 +11,5 @@ export 'totalscreen_addtocart.dart';
 export 'paymentscreen.dart';
 export 'electronics_category.dart';
 export 'tshirt_category.dart';
+export 'sellerdetails.dart';
+export 'couponcode_screen_ui.dart';

@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:customermodule/src/view/product/delivery_address.dart';
+
 import '../../../all_packages.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -12,6 +14,12 @@ class ProductDetailsScreen extends StatefulWidget {
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   List<Color> colors = [appcolor, toptitlecolor, pricebutton, amber];
+  List<String> colorsname = [
+    'appcolor',
+    'toptitlecolor',
+    'pricebutton',
+    'amber'
+  ];
   var colorindex = 0;
   var textindex = 0;
   var text = [
@@ -48,7 +56,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   //   super.initState();
   // }
 
-  getaddrocart() {
+  getaddtocart() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,16 +81,21 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           ),
         ),
         // _showOpenDialog(context),
-        Container(
-          height: 5.00.hp,
-          width: 40.00.wp,
-          decoration: BoxDecoration(
-              color: appcolor, borderRadius: BorderRadius.circular(10)),
-          child: Center(
-            child: Text(
-              'BUY NOW',
-              style: buttontext,
-              textAlign: TextAlign.center,
+        InkWell(
+          onTap: () {
+            Get.to(DeliveryAddress());
+          },
+          child: Container(
+            height: 5.00.hp,
+            width: 40.00.wp,
+            decoration: BoxDecoration(
+                color: appcolor, borderRadius: BorderRadius.circular(10)),
+            child: Center(
+              child: Text(
+                'BUY NOW',
+                style: buttontext,
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ),
@@ -93,6 +106,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: screenbackground,
       appBar: AppBar(
         centerTitle: true,
         title: const Text("PRODUCT DETAIL"),
@@ -124,12 +138,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
                 width: 100.00.wp,
                 height: 25.00.hp,
                 decoration: BoxDecoration(
-                  border: Border.all(),
+                  // border: Border.all(),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Image.asset(text[textindex]),
@@ -148,8 +163,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Smart Watch',
-                          style: listtitle,
+                          'Women printed Rayon kurti',
+                          style: notificationtitle,
                         ),
                         Text(
                           '\u20B9 345.00',
@@ -197,26 +212,26 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     ),
                     Text(
                       'free delivery',
-                      style: totalstyledis,
+                      style: freedelivery,
                     ),
                   ],
                 ),
               ),
               Container(
-                height: 11.00.hp,
+                height: 15.00.hp,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Color',
-                      style: listtitle,
+                      'Color: ${colorsname[0].toString()}',
+                      style: subtitleStyle,
                     ),
                     SizedBox(
                       height: 1.00.hp,
                     ),
                     Container(
-                      height: 5.00.hp,
+                      height: 10.00.hp,
                       width: 100.00.wp,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
@@ -232,13 +247,20 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 });
                               }),
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 5.0),
+                                padding: EdgeInsets.only(left: 10.0),
                                 child: Container(
-                                  height: 5.00.hp,
-                                  width: 10.00.wp,
+                                  width: 15.00.wp,
                                   decoration: BoxDecoration(
-                                      color: colors[index],
-                                      shape: BoxShape.circle),
+                                      border: Border.all(
+                                          width: 1,
+                                          color: textindex == index
+                                              ? appcolor
+                                              : screenbackground),
+                                      image: DecorationImage(
+                                          fit: BoxFit.fill,
+                                          image: AssetImage(text[index])),
+                                      // color: colors[index],
+                                      shape: BoxShape.rectangle),
                                 ),
                               ),
                             );
@@ -249,6 +271,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               ),
 
               const ProductAboutUi(),
+              SellerDetailsScreen(),
 
               SizedBox(
                 height: 1.00.hp,
@@ -259,7 +282,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         ),
       ),
       bottomNavigationBar:
-          Padding(padding: EdgeInsets.all(8.0), child: getaddrocart()),
+          Padding(padding: EdgeInsets.all(8.0), child: getaddtocart()),
     );
   }
 }

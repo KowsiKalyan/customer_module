@@ -92,20 +92,28 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
                                 image: AssetImage(image[index]))),
                       ),
                       Positioned(
-                          bottom: 0,
+                          bottom: 18,
                           child: Container(
-                            height: 5.0.hp,
+                            height: 3.0.hp,
                             width: 30.0.wp,
-                            color: screenbackground,
+                            color: Color.fromARGB(255, 126, 23, 57),
+                            child: Center(
+                              child: Text(
+                                'min 20% off',
+                                style: buttonprice,
+                              ),
+                            ),
                           )),
                       Positioned(
-                        bottom: 16,
-                        child: Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            garmentsname[index],
-                            style: categorystyle,
-                            textAlign: TextAlign.start,
+                        bottom: 1,
+                        child: Container(
+                          width: 30.0.wp,
+                          child: Center(
+                            child: Text(
+                              garmentsname[index],
+                              style: categorydetails,
+                              textAlign: TextAlign.start,
+                            ),
                           ),
                         ),
                       ),
@@ -120,48 +128,6 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
                       //         style: formhintstyle),
                       //   ),
                       // ),
-                      Positioned(
-                        bottom: 0,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.cover,
-                              child: Text(
-                                '\$1,099',
-                                style: categoryprice,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 2.0.wp,
-                            ),
-                            FittedBox(
-                              fit: BoxFit.cover,
-                              child: Text(
-                                '\$1,099',
-                                style: categoryprice,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Positioned(
-                          top: 0,
-                          child: Container(
-                            height: MediaQuery.of(context).size.height * 0.03,
-                            width: 10.00.wp,
-                            decoration: BoxDecoration(
-                                color: appcolor,
-                                borderRadius: BorderRadius.circular(2)),
-                            child: Center(
-                              child: Text(
-                                '20%',
-                                style: buttonprice,
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ))
                     ],
                   ),
                 ),
