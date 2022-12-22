@@ -1,10 +1,7 @@
-import 'dart:async';
-import 'dart:ffi';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:customermodule/all_packages.dart';
 
-import 'order_tracking.dart';
+import 'ordersummary_screen.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -373,7 +370,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   InkWell(
                     onTap: (() {
                       setState(() {
-                        Get.to(OrderTrackingUi());
+                        // Get.to(OrderTrackingUi());
+                        Get.to(OrderSummary());
                       });
                     }),
                     child: Padding(
@@ -386,7 +384,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             borderRadius: BorderRadius.circular(10)),
                         child: Center(
                           child: Text(
-                            'Confirm Order',
+                            'Continue',
                             style: placeorder,
                           ),
                         ),

@@ -1,9 +1,10 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:customermodule/src/view/product/delivery_address.dart';
+import 'package:customermodule/src/view/product/create_delivery_address.dart';
 
 import '../../../all_packages.dart';
+import 'deiveryaddress_screen.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});
@@ -83,7 +84,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         // _showOpenDialog(context),
         InkWell(
           onTap: () {
-            Get.to(DeliveryAddress());
+            Get.to(DeliveryAddressScreen());
           },
           child: Container(
             height: 5.00.hp,
