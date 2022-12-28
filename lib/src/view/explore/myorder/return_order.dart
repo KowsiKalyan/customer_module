@@ -1,16 +1,15 @@
 import 'package:customermodule/src/view/explore/myorder/rating_screen.dart';
 
 import '../../../../all_packages.dart';
-import 'order_details_screen.dart';
 
-class AllDetails extends StatefulWidget {
-  //const AllDetails({super.key});
+class ReturnOrder extends StatefulWidget {
+  //const ReturnOrder({super.key});
 
   @override
-  State<AllDetails> createState() => _AllDetailsState();
+  State<ReturnOrder> createState() => _ReturnOrderState();
 }
 
-class _AllDetailsState extends State<AllDetails> {
+class _ReturnOrderState extends State<ReturnOrder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +20,7 @@ class _AllDetailsState extends State<AllDetails> {
             return Padding(
               padding: const EdgeInsets.only(top: 10.0),
               child: Container(
-                height: 36.0.hp,
+                height: 38.0.hp,
                 width: 100.0.wp,
                 color: screenbackground,
                 child: Column(
@@ -96,23 +95,54 @@ class _AllDetailsState extends State<AllDetails> {
                                 SizedBox(
                                   height: 1.0.hp,
                                 ),
-                                Text(
-                                  'Delivered on 11 jan 2023',
-                                  style: orderdetails,
+                                Row(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 5,
+                                      backgroundColor: Colors.amber,
+                                      child: CircleAvatar(
+                                        radius: 2,
+                                        backgroundColor: Colors.orange,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 2.0.wp,
+                                    ),
+                                    Text(
+                                      'Refund Processed',
+                                      style: orderdetails,
+                                    )
+                                  ],
                                 ),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.credit_card,
+                                      color: formhintcolor,
+                                      size: 15,
+                                    ),
+                                    SizedBox(
+                                      width: 2.0.wp,
+                                    ),
+                                    SizedBox(
+                                      width: 45.0.wp,
+                                      child: Text(
+                                          'Rs.269 is processed, it will reflect in your Card in 5-8 days',
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                          softWrap: false,
+                                          style: formhintstyle),
+                                    ),
+                                  ],
+                                )
                               ],
                             ),
-                            InkWell(
-                              onTap: (() {
-                                Get.to(OrderDetailsScreen());
-                              }),
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 28.0),
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 20,
-                                  color: appcolor,
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 28.0),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 20,
+                                color: appcolor,
                               ),
                             )
                           ],

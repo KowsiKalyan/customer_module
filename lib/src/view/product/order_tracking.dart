@@ -1,5 +1,5 @@
-import 'package:customermodule/src/view/product/order_tracker.dart';
 import 'package:customermodule/all_packages.dart';
+import 'package:customermodule/src/view/product/order_tracking_packages.dart';
 
 class OrderTrackingUi extends StatefulWidget {
   const OrderTrackingUi({Key? key}) : super(key: key);
@@ -34,32 +34,6 @@ class _OrderTrackingUiState extends State<OrderTrackingUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          elevation: 10,
-          backgroundColor: appcolor,
-          centerTitle: true,
-          leading: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: InkWell(
-                onTap: () {
-                  Get.back();
-                },
-                child: Icon(Icons.arrow_back)),
-          ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 20.0),
-              child: Icon(
-                Icons.add_shopping_cart_rounded,
-                color: screenbackground,
-                size: 20,
-              ),
-            ),
-          ],
-          title: Text(
-            'ORDER DETAILS',
-            style: loginbuttonstyle,
-          )),
       body: OrderTracker(
         status: Status.delivered,
         activeColor: Colors.green,

@@ -1,9 +1,14 @@
 import 'dart:async';
 
 import 'package:customermodule/all_packages.dart';
+import 'package:customermodule/src/view/explore/myorder/cancelled_order.dart';
+import 'package:customermodule/src/view/explore/myorder/delivered_order.dart';
+import 'package:customermodule/src/view/explore/myorder/processing_order.dart';
 import 'package:flutter/material.dart';
 
 import 'myorder/alldetails_screen.dart';
+import 'myorder/return_order.dart';
+import 'myorder/shipped_order.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
@@ -128,19 +133,19 @@ class _MyWidgetState extends State<MyWidget> {
                     child: AllDetails(),
                   ),
                   Center(
-                    child: Text("Status Pages"),
+                    child: ProcessingOrder(),
                   ),
                   Center(
-                    child: Text('Calls Page'),
+                    child: ShippedOrder(),
                   ),
                   Center(
-                    child: Text('Settings Page'),
+                    child: DeliveredOrder(),
                   ),
                   Center(
-                    child: Text('Calls Page'),
+                    child: CancelledOrder(),
                   ),
                   Center(
-                    child: Text('Settings Page'),
+                    child: ReturnOrder(),
                   )
                 ],
               ))

@@ -43,6 +43,7 @@ final toptitleStyleappcolor = GoogleFonts.jost(
         letterSpacing: 0.2,
         fontSize: 14.00.sp,
         color: appcolor,
+        decoration: TextDecoration.none,
         fontWeight: FontWeight.w700));
 final offer = GoogleFonts.jost(
     textStyle: TextStyle(
@@ -200,6 +201,7 @@ final viewdetails = GoogleFonts.jost(
 final orderdetails = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 10.00.sp,
+        decoration: TextDecoration.none,
         color: const Color(0xff000000),
         fontWeight: FontWeight.bold));
 final shippingdetails = GoogleFonts.jost(
@@ -254,3 +256,14 @@ final categorydetails = GoogleFonts.jost(
         fontSize: 10.00.sp,
         color: const Color(0xff000000),
         fontWeight: FontWeight.w500));
+final orderdetailshint = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 10.00.sp,
+        color: Color.fromARGB(136, 110, 110, 110),
+        fontWeight: FontWeight.bold));
+final orderdetailsblue = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 10.00.sp,
+        decoration: TextDecoration.none,
+        color: Colors.blue,
+        fontWeight: FontWeight.bold));

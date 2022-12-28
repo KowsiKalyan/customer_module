@@ -17,12 +17,13 @@ class _RatingsState extends State<Ratings> {
       return const Icon(
         Icons.star,
         color: appcolor,
-        size: 30,
+        size: 25,
       );
     } else {
       return const Icon(
         Icons.star_border_outlined,
-        size: 30,
+        size: 25,
+        color: formhintcolor,
       );
     }
   }

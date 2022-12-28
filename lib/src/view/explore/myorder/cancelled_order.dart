@@ -1,16 +1,15 @@
 import 'package:customermodule/src/view/explore/myorder/rating_screen.dart';
 
 import '../../../../all_packages.dart';
-import 'order_details_screen.dart';
 
-class AllDetails extends StatefulWidget {
-  //const AllDetails({super.key});
+class CancelledOrder extends StatefulWidget {
+  //const CancelledOrder({super.key});
 
   @override
-  State<AllDetails> createState() => _AllDetailsState();
+  State<CancelledOrder> createState() => _CancelledOrderState();
 }
 
-class _AllDetailsState extends State<AllDetails> {
+class _CancelledOrderState extends State<CancelledOrder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +20,7 @@ class _AllDetailsState extends State<AllDetails> {
             return Padding(
               padding: const EdgeInsets.only(top: 10.0),
               child: Container(
-                height: 36.0.hp,
+                height: 28.0.hp,
                 width: 100.0.wp,
                 color: screenbackground,
                 child: Column(
@@ -96,41 +95,52 @@ class _AllDetailsState extends State<AllDetails> {
                                 SizedBox(
                                   height: 1.0.hp,
                                 ),
-                                Text(
-                                  'Delivered on 11 jan 2023',
-                                  style: orderdetails,
-                                ),
+                                Row(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 5,
+                                      backgroundColor:
+                                          Color.fromARGB(255, 240, 157, 157),
+                                      child: CircleAvatar(
+                                        radius: 2,
+                                        backgroundColor: appcolor,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 2.0.wp,
+                                    ),
+                                    Text(
+                                      'Cancelled',
+                                      style: formhintstylesearch,
+                                    )
+                                  ],
+                                )
                               ],
                             ),
-                            InkWell(
-                              onTap: (() {
-                                Get.to(OrderDetailsScreen());
-                              }),
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 28.0),
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 20,
-                                  color: appcolor,
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 28.0),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 20,
+                                color: appcolor,
                               ),
                             )
                           ],
                         ),
-                        Divider(
-                          thickness: 1,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20.0, right: 20),
-                          child: Text(
-                            'Rate Your Experience',
-                            style: subtitleStyle,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20.0, right: 20),
-                          child: Ratings(),
-                        )
+                        // Divider(
+                        //   thickness: 1,
+                        // ),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(left: 20.0, right: 20),
+                        //   child: Text(
+                        //     'Rate Your Experience',
+                        //     style: toptitleStyle,
+                        //   ),
+                        // ),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(left: 20.0, right: 20),
+                        //   child: Ratings(),
+                        // )
                       ],
                     ),
                   ],

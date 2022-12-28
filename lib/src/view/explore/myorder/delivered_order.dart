@@ -1,16 +1,15 @@
 import 'package:customermodule/src/view/explore/myorder/rating_screen.dart';
 
 import '../../../../all_packages.dart';
-import 'order_details_screen.dart';
 
-class AllDetails extends StatefulWidget {
-  //const AllDetails({super.key});
+class DeliveredOrder extends StatefulWidget {
+  //const DeliveredOrder({super.key});
 
   @override
-  State<AllDetails> createState() => _AllDetailsState();
+  State<DeliveredOrder> createState() => _DeliveredOrderState();
 }
 
-class _AllDetailsState extends State<AllDetails> {
+class _DeliveredOrderState extends State<DeliveredOrder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +20,7 @@ class _AllDetailsState extends State<AllDetails> {
             return Padding(
               padding: const EdgeInsets.only(top: 10.0),
               child: Container(
-                height: 36.0.hp,
+                height: 35.0.hp,
                 width: 100.0.wp,
                 color: screenbackground,
                 child: Column(
@@ -102,17 +101,12 @@ class _AllDetailsState extends State<AllDetails> {
                                 ),
                               ],
                             ),
-                            InkWell(
-                              onTap: (() {
-                                Get.to(OrderDetailsScreen());
-                              }),
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 28.0),
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 20,
-                                  color: appcolor,
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 28.0),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 20,
+                                color: appcolor,
                               ),
                             )
                           ],
