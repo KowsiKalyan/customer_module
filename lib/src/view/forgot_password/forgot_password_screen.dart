@@ -16,7 +16,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   void initState() {
     super.initState();
     images = const AssetImage(
-      "assets/img/createPassword.gif",
+      "assets/img/forgotPassword.gif",
     );
   }
 
