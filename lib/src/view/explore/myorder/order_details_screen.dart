@@ -265,7 +265,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
             height: 1.0.hp,
           ),
           Container(
-            height: 25.0.hp,
+            height: 27.0.hp,
             width: 100.0.wp,
             color: screenbackground,
             child: OrderTrackingUi(),

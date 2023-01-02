@@ -54,6 +54,8 @@ dependencies:
   photo_view: ^0.14.0
   clay_containers: ^0.3.2
   image_picker: ^0.8.6
+  http: ^0.13.5
+  pin_code_fields: ^7.4.0
  
  
   
@@ -85,6 +87,7 @@ flutter:
     - assets/images/
     - assets/images/category/
     - assets/profile/
+    - assets/img/
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

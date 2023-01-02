@@ -136,6 +136,6 @@ class _ProductCategoryListState extends State<ProductCategoryList> {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 mainAxisSpacing: 2.0,
-                childAspectRatio: 2.40 / 3)));
+                childAspectRatio: 2.30 / 3)));
   }
 }

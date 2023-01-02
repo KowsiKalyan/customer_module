@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:customermodule/all_packages.dart';
+import 'package:customermodule/src/view/login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   return FadeTransition(
                     opacity:
                         animation, // CurvedAnimation(parent: animation, curve: Curves.elasticInOut),
-                    child: const DashboardScreen(),
+                    child: const LoginScreen(),
                   );
                 },
               ),

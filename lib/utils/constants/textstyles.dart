@@ -89,7 +89,7 @@ final productpriceblue = GoogleFonts.jost(
 final productpricestrike = GoogleFonts.jost(
     textStyle: TextStyle(
         decoration: TextDecoration.lineThrough,
-        fontSize: 12.00.sp,
+        fontSize: 10.00.sp,
         color: toptitlecolor,
         fontWeight: FontWeight.w500));
 

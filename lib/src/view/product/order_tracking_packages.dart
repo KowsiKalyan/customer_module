@@ -172,67 +172,57 @@ class _OrderTrackerState extends State<OrderTracker>
         padding: const EdgeInsets.only(left: 28.0, right: 28, top: 10),
         child: Column(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
+            Row(
               children: [
-                Row(
-                  children: [
-                    Container(
-                      height: 15,
-                      width: 15,
-                      decoration: BoxDecoration(
-                          color: widget.activeColor ?? Colors.green,
-                          borderRadius: BorderRadius.circular(50)),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                              text: "Order Placed ",
-                              style: widget.headingTitleStyle ??
-                                  const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold)),
-                          TextSpan(
-                            text: "Fri, 25th Mar '22",
-                            style: widget.headingDateTextStyle ??
-                                const TextStyle(
-                                    fontSize: 16, color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                Container(
+                  height: 15,
+                  width: 15,
+                  decoration: BoxDecoration(
+                      color: widget.activeColor ?? Colors.green,
+                      borderRadius: BorderRadius.circular(50)),
                 ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 6),
-                      child: SizedBox(
-                        width: 2,
-                        height: widget.orderTitleAndDateList != null &&
-                                widget.orderTitleAndDateList!.isNotEmpty
-                            ? widget.orderTitleAndDateList!.length * 20
-                            : 60,
-                        child: RotatedBox(
-                          quarterTurns: 1,
-                          child: LinearProgressIndicator(
-                            value: controller?.value ?? 0.0,
-                            backgroundColor:
-                                widget.inActiveColor ?? Colors.grey[300],
-                            color: widget.activeColor ?? Colors.green,
-                          ),
-                        ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                          text: "Order Placed ",
+                          style: widget.headingTitleStyle ?? orderdetails),
+                      TextSpan(
+                        text: "Fri, 25th Mar '22",
+                        style: widget.headingDateTextStyle ??
+                            const TextStyle(fontSize: 16, color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 6),
+                  child: SizedBox(
+                    width: 2,
+                    height: widget.orderTitleAndDateList != null &&
+                            widget.orderTitleAndDateList!.isNotEmpty
+                        ? widget.orderTitleAndDateList!.length * 20
+                        : 60,
+                    child: RotatedBox(
+                      quarterTurns: 1,
+                      child: LinearProgressIndicator(
+                        value: controller?.value ?? 0.0,
+                        backgroundColor:
+                            widget.inActiveColor ?? Colors.grey[300],
+                        color: widget.activeColor ?? Colors.green,
                       ),
                     ),
-                    const SizedBox(
-                      width: 30,
-                    ),
-                  ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 30,
                 ),
               ],
             ),
@@ -264,10 +254,7 @@ class _OrderTrackerState extends State<OrderTracker>
                         children: [
                           TextSpan(
                               text: "Shipped ",
-                              style: widget.headingTitleStyle ??
-                                  const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold)),
+                              style: widget.headingTitleStyle ?? orderdetails),
                           TextSpan(
                             text: "Fri, 28th Mar '22",
                             style: widget.headingDateTextStyle ??
@@ -401,10 +388,7 @@ class _OrderTrackerState extends State<OrderTracker>
                         children: [
                           TextSpan(
                               text: "Delivered ",
-                              style: widget.headingTitleStyle ??
-                                  const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold)),
+                              style: widget.headingTitleStyle ?? orderdetails),
                           TextSpan(
                             text: "Fri, 31th Mar '22",
                             style: widget.headingDateTextStyle ??

@@ -1,17 +1,23 @@
-import 'dart:async';
-
 import 'package:customermodule/all_packages.dart';
+import 'package:customermodule/src/service/addtocart_service.dart';
+
+import '../model/addtocart_response.dart';
 
 class AddToCartcontroller extends GetxController {
-  bool isStopped = false; //global
-
-  sec5Timer() {
-    Timer.periodic(Duration(seconds: 5), (timer) {
-      Container(
-        child: Image.asset(
-          'assets/images/dress1.jpg',
-        ),
-      );
-    });
+  RxBool isloading = true.obs;
+  List<Model> _model = [];
+  List<Model> get model => _model;
+  addtocartController() async {
+    try {
+      var response = await AddtoCartservice().addtocartService();
+      if (response != null) {
+        _model.add(response);
+        isloading(false);
+      } else {
+        isloading(false);
+      }
+    } catch (e) {
+      rethrow;
+    }
   }
 }

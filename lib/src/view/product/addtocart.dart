@@ -2,10 +2,14 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:customermodule/all_packages.dart';
+import 'package:customermodule/src/view/explore/myorder/delivered_order.dart';
+import 'package:customermodule/src/view/explore/myorder/shipped_order.dart';
 import 'package:customermodule/src/view/product/order_tracking.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../../controller/addtocart_controller.dart';
+import 'create_delivery_address.dart';
+import 'deiveryaddress_screen.dart';
 
 class AddtocartUi extends StatefulWidget {
   const AddtocartUi({super.key});
@@ -40,8 +44,6 @@ class _AddtocartUiState extends State<AddtocartUi> {
 
   @override
   void initState() {
-    addToCartcontroller.sec5Timer();
-
     super.initState();
   }
 
@@ -109,7 +111,7 @@ class _AddtocartUiState extends State<AddtocartUi> {
                               dress.removeAt(index);
                               setState(() {});
                             },
-                            backgroundColor: appcolor1,
+                            backgroundColor: appcolor,
                             foregroundColor: Colors.white,
                             icon: Icons.delete,
                             label: 'Delete',
@@ -253,7 +255,7 @@ class _AddtocartUiState extends State<AddtocartUi> {
                     );
                   })),
             ),
-            TotalScreenaddtocart(),
+            // TotalScreenaddtocart(),
           ],
         ),
         bottomNavigationBar: Container(
@@ -271,7 +273,7 @@ class _AddtocartUiState extends State<AddtocartUi> {
             ),
             trailing: InkWell(
               onTap: (() {
-                Get.to(OrderTrackingUi());
+                Get.to((DeliveryAddressScreen()));
               }),
               child: Container(
                 height: 5.0.hp,
@@ -279,7 +281,7 @@ class _AddtocartUiState extends State<AddtocartUi> {
                 color: Colors.orange,
                 child: Center(
                   child: Text(
-                    'Place Order',
+                    'Continue',
                     style: toptitleStyle,
                   ),
                 ),
