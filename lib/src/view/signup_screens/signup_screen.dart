@@ -18,7 +18,7 @@ class _SignupScreenState extends State<SignupScreen> {
   void initState() {
     super.initState();
     images = const AssetImage(
-      "assets/img/login.gif",
+      "assets/img/register.gif",
     );
   }
 

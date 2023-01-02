@@ -19,7 +19,7 @@ class _ChangeNewPasswordState extends State<ChangeNewPassword> {
   void initState() {
     super.initState();
     images = const AssetImage(
-      "assets/img/changepassword.gif",
+      "assets/img/createPassword.gif",
     );
   }
 

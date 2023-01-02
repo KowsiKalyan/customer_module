@@ -18,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
     // loginController.loginController();
     super.initState();
     images = const AssetImage(
-      "assets/img/register.gif",
+      "assets/img/login.gif",
     );
   }
 

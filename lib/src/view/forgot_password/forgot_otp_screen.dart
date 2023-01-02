@@ -18,7 +18,7 @@ class _ForgotOTPScreenState extends State<ForgotOTPScreen> {
   void initState() {
     super.initState();
     images = const AssetImage(
-      "assets/img/enterOTP.gif",
+      "assets/img/enterotp.gif",
     );
   }
 
