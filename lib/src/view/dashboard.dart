@@ -32,6 +32,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return AppBar(
         elevation: 10,
         backgroundColor: appcolor,
+        automaticallyImplyLeading: false,
         centerTitle: true,
         leading: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -69,13 +70,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: _currentIndex == 0 ? getappbar() : null,
-        backgroundColor: bgcolor,
+        //   backgroundColor: bgcolor,
         body: _pages[_currentIndex]['page'],
         bottomNavigationBar: BottomNavyBar(
           containerHeight: 70,
+
+          //backgroundColor: screenbackground,
           selectedIndex: _currentIndex,
           showElevation: false,
-          itemCornerRadius: 24,
+          //itemCornerRadius: 24,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           curve: Curves.easeIn,
           onItemSelected: (index) => setState(() => _currentIndex = index),
@@ -87,6 +90,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               title: Text(
                 'Home',
+                style: Get.isDarkMode ? menuprofilesection : orderdetails,
               ),
               activeColor: appcolor,
               textAlign: TextAlign.center,
@@ -96,9 +100,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Icons.category,
                 size: 20,
               ),
-              title: const Padding(
-                padding: EdgeInsets.only(left: 1.0),
-                child: Text('Category'),
+              title: Text(
+                'Category',
+                style: Get.isDarkMode ? menuprofilesection : orderdetails,
               ),
               activeColor: appcolor,
               textAlign: TextAlign.center,
@@ -108,9 +112,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Icons.explore,
                 size: 20,
               ),
-              title: const Padding(
+              title: Padding(
                 padding: EdgeInsets.only(left: 1.0),
-                child: Text('Explore'),
+                child: Text(
+                  'Explore',
+                  style: Get.isDarkMode ? menuprofilesection : orderdetails,
+                ),
               ),
               activeColor: appcolor,
               textAlign: TextAlign.center,
@@ -120,9 +127,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Icons.add_shopping_cart_rounded,
                 size: 20,
               ),
-              title: const Padding(
+              title: Padding(
                 padding: EdgeInsets.only(left: 1.0),
-                child: Text('Cart'),
+                child: Text(
+                  'Cart',
+                  style: Get.isDarkMode ? menuprofilesection : orderdetails,
+                ),
               ),
               activeColor: appcolor,
               textAlign: TextAlign.center,
@@ -132,7 +142,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Icons.person,
                 size: 20,
               ),
-              title: Text('Profile'),
+              title: Text(
+                'Profile',
+                style: Get.isDarkMode ? menuprofilesection : orderdetails,
+              ),
               activeColor: appcolor,
               textAlign: TextAlign.center,
             ),

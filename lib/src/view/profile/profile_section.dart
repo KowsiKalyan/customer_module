@@ -37,7 +37,7 @@ class _ProfileSectionState extends State<ProfileSection> {
                   Flexible(
                     child: Text(
                       'Nithish Sharma',
-                      style: menuprofilesection,
+                      style: subtitleStyle,
                     ),
                   ),
                 ],
@@ -218,7 +218,7 @@ class _ProfileSectionState extends State<ProfileSection> {
                             Center(
                               child: Text(
                                 'Edit Profile',
-                                style: toptitleStyle,
+                                style: subtitleStyle,
                                 textAlign: TextAlign.center,
                               ),
                             ),

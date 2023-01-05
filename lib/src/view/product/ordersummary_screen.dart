@@ -13,7 +13,7 @@ class _OrderSummaryState extends State<OrderSummary> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: bgcolor,
+        //   backgroundColor: bgcolor,
         appBar: AppBar(
           backgroundColor: appcolor,
           title: Text(
@@ -29,7 +29,7 @@ class _OrderSummaryState extends State<OrderSummary> {
               Container(
                 height: 8.0.hp,
                 width: 100.0.wp,
-                color: screenbackground,
+                //color: screenbackground,
                 child: ListTile(
                   title: Image.asset(
                     'assets/images/truck.gif',
@@ -48,7 +48,7 @@ class _OrderSummaryState extends State<OrderSummary> {
               Container(
                 height: 18.0.hp,
                 width: 100.0.wp,
-                color: screenbackground,
+                //color: screenbackground,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,7 +131,7 @@ class _OrderSummaryState extends State<OrderSummary> {
               Container(
                 height: 18.0.hp,
                 width: 100.0.wp,
-                color: screenbackground,
+                // color: screenbackground,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 28.0, right: 28),
                   child: Column(
@@ -182,7 +182,7 @@ class _OrderSummaryState extends State<OrderSummary> {
               Container(
                 height: 8.0.hp,
                 width: 100.0.wp,
-                color: screenbackground,
+                //color: screenbackground,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 28.0, right: 28),
                   child: Column(
@@ -221,7 +221,7 @@ class _OrderSummaryState extends State<OrderSummary> {
               Container(
                 height: 25.0.hp,
                 width: 100.0.wp,
-                color: screenbackground,
+                //color: screenbackground,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 28.0, right: 28),
                   child: Column(
@@ -278,7 +278,7 @@ class _OrderSummaryState extends State<OrderSummary> {
         bottomNavigationBar: Container(
           height: 10.0.hp,
           width: 100.0.wp,
-          color: screenbackground,
+          //color: screenbackground,
           child: Column(
             children: [
               Row(
@@ -287,7 +287,7 @@ class _OrderSummaryState extends State<OrderSummary> {
                     padding: EdgeInsets.only(left: 20),
                     height: 8.0.hp,
                     width: 50.0.wp,
-                    color: screenbackground,
+                    // color: screenbackground,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

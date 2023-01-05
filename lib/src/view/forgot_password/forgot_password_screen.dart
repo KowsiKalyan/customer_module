@@ -95,29 +95,30 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               onTap: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                              child: Column(
                                 children: [
-                                  Column(
-                                    children: [
-                                      Image.asset(
-                                        'assets/images/left-arrow.png',
-                                        height: 40,
-                                        width: 40,
+                                  Container(
+                                      height: 6.0.hp,
+                                      width: 20.0.wp,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: buttoncolor,
                                       ),
-                                      SizedBox(height: 1.00.hp),
-                                      Text(
-                                        'Back',
-                                        style: GoogleFonts.jost(
-                                            textStyle: TextStyle(
-                                                fontSize: MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    0.017,
-                                                color: const Color(0xff373737),
-                                                fontWeight: FontWeight.w500)),
-                                      )
-                                    ],
+                                      child: Icon(
+                                        Icons.arrow_back,
+                                        color: screenbackground,
+                                      )),
+                                  SizedBox(height: 1.00.hp),
+                                  Text(
+                                    'Back',
+                                    style: GoogleFonts.jost(
+                                        textStyle: TextStyle(
+                                            fontSize: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.017,
+                                            color: const Color(0xff373737),
+                                            fontWeight: FontWeight.w500)),
                                   )
                                 ],
                               ),

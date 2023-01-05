@@ -96,7 +96,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       Container(
                         padding: EdgeInsets.all(10),
                         height: 8.0.hp,
-                        color: Colors.white,
+                        // color: Colors.white,
                         child: RadioListTile(
                           activeColor: appcolor,
                           title: Row(
@@ -150,7 +150,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           ? Container(
                               height: 30.0.hp,
                               width: 100.0.wp,
-                              color: screenbackground,
+                              //  color: screenbackground,
                               padding: EdgeInsets.only(left: 40),
                               child: Column(
                                 mainAxisAlignment:
@@ -162,7 +162,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                     style: productbold,
                                   ),
                                   Container(
-                                    color: Colors.white,
+                                    //color: Colors.white,
                                     height: 6.00.hp,
                                     width: 80.00.wp,
                                     child: TextFormField(
@@ -197,7 +197,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                     style: productbold,
                                   ),
                                   Container(
-                                    color: Colors.white,
+                                    //color: Colors.white,
                                     height: 6.00.hp,
                                     width: 80.00.wp,
                                     child: TextFormField(
@@ -246,7 +246,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                   Row(
                                     children: [
                                       Container(
-                                        color: Colors.white,
+                                        // color: Colors.white,
                                         height: 6.00.hp,
                                         width: 35.00.wp,
                                         child: TextFormField(
@@ -283,7 +283,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                         width: 6.00.wp,
                                       ),
                                       Container(
-                                        color: Colors.white,
+                                        //  color: Colors.white,
                                         height: 6.00.hp,
                                         width: 35.00.wp,
                                         child: TextFormField(
@@ -332,7 +332,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
         bottomNavigationBar: Container(
           height: 15.0.hp,
           width: 100.0.wp,
-          color: screenbackground,
+          // color: screenbackground,
           child: Column(
             children: [
               Container(
@@ -344,7 +344,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     padding: EdgeInsets.only(left: 20),
                     height: 7.0.hp,
                     width: 50.0.wp,
-                    color: screenbackground,
+                    //color: screenbackground,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

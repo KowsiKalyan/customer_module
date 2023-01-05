@@ -35,7 +35,7 @@ class _ProductAboutUiState extends State<ProductAboutUi> {
             height: 5.0.hp,
             width: 100.0.wp,
             padding: EdgeInsets.only(top: 1.0.hp),
-            color: screenbackground,
+            //  color: screenbackground,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

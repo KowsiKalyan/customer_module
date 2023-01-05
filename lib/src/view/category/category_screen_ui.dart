@@ -104,7 +104,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         backgroundColor: appcolor,
       ),
       body: Scaffold(
-        backgroundColor: bgcolor,
+        //  backgroundColor: bgcolor,
         body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: GridView.builder(

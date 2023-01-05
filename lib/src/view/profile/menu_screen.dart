@@ -18,7 +18,6 @@ class _MenuScreenState extends State<MenuScreen> {
         return true;
       },
       child: Scaffold(
-        backgroundColor: appcolor,
         body: SafeArea(
             child: SingleChildScrollView(
           child: Column(
@@ -32,12 +31,12 @@ class _MenuScreenState extends State<MenuScreen> {
               ),
               Container(
                 width: 100.00.wp,
-                decoration: const BoxDecoration(
-                    color: bgcolor,
+                decoration: BoxDecoration(
+                    //   color: bgcolor,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20.0),
-                      topRight: Radius.circular(20.0),
-                    )),
+                  topLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
+                )),
                 child: Column(
                   children: [
                     const SizedBox(
@@ -75,7 +74,33 @@ class _MenuScreenState extends State<MenuScreen> {
                         ),
                         child: InkWell(
                           onTap: () async {
-                            // await loginController.logout();
+                            showDialog(
+                              context: context,
+                              builder: (ctx) => AlertDialog(
+                                content: const Text(
+                                    "Are you sure you want to logout"),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () {
+                                      Get.back();
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.all(14),
+                                      child: const Text("No"),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      Get.back();
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.all(14),
+                                      child: const Text("Yes"),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,

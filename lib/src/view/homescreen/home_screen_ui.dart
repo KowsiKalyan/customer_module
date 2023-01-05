@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgcolor,
+      //backgroundColor: bgcolor,
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         controller: _scrollBottomBarController,
@@ -52,7 +52,7 @@ class SearchBarHeaderDelegate extends SliverPersistentHeaderDelegate {
         child: Container(
           padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10),
           height: 6.0.hp,
-          color: screenbackground,
+          color: Get.isDarkMode ? Colors.black : screenbackground,
           child: GestureDetector(
             child: TextFormField(
               style: subtitleStyle,

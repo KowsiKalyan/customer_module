@@ -44,7 +44,7 @@ class _ProductsubcategoryState extends State<Productsubcategory> {
             style: loginbuttonstyle,
           )),
       body: Scaffold(
-        backgroundColor: bgcolor,
+        // backgroundColor: bgcolor,
         body: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           controller: _scrollBottomBarController,
@@ -153,7 +153,7 @@ class SearchBarHeaderDelegates extends SliverPersistentHeaderDelegate {
       alignment: Alignment.topCenter,
       child: Container(
         padding: const EdgeInsets.all(5),
-        color: bgcolor,
+        // color: bgcolor,
         child: GestureDetector(
           child: Card(
               child: Row(

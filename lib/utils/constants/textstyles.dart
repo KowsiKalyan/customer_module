@@ -57,7 +57,6 @@ final subtitleStyle = GoogleFonts.jost(
         wordSpacing: 1,
         letterSpacing: 0.1,
         fontSize: 12.00.sp,
-        color: toptitlecolor,
         fontWeight: FontWeight.w500));
 final subtitleStyleappcolor = GoogleFonts.jost(
     textStyle: TextStyle(
@@ -173,7 +172,7 @@ final abouttext = GoogleFonts.jost(
 ));
 final menuprofilesection = GoogleFonts.jost(
     textStyle: TextStyle(
-        fontSize: 15.00.sp, color: Colors.white, fontWeight: FontWeight.w600));
+        fontSize: 14.00.sp, color: Colors.white, fontWeight: FontWeight.w600));
 final menuprofiloption = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 9.00.sp,
@@ -202,7 +201,6 @@ final orderdetails = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 10.00.sp,
         decoration: TextDecoration.none,
-        color: const Color(0xff000000),
         fontWeight: FontWeight.bold));
 final shippingdetails = GoogleFonts.jost(
     textStyle: TextStyle(

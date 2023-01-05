@@ -44,7 +44,7 @@ class _SellerDetailsScreenState extends State<SellerDetailsScreen> {
             Container(
               height: 10.0.hp,
               width: 20.0.wp,
-              color: Color.fromARGB(255, 238, 238, 238),
+              //color: Color.fromARGB(255, 238, 238, 238),
               child: Icon(
                 Icons.cancel_presentation_outlined,
                 color: Colors.red,
@@ -53,7 +53,7 @@ class _SellerDetailsScreenState extends State<SellerDetailsScreen> {
             Container(
               height: 10.0.hp,
               width: 20.0.wp,
-              color: Color.fromARGB(255, 238, 238, 238),
+              // color: Color.fromARGB(255, 238, 238, 238),
               child: Icon(
                 Icons.keyboard_return_outlined,
                 color: Colors.red,

@@ -107,7 +107,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: screenbackground,
+      // backgroundColor: screenbackground,
       appBar: AppBar(
         centerTitle: true,
         title: const Text("PRODUCT DETAIL"),
@@ -126,7 +126,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 onTap: () {},
                 child: const Icon(
                   Icons.favorite_border,
-                  color: screenbackground,
+                  // color: screenbackground,
                 ),
               )),
         ],

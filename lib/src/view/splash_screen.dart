@@ -45,14 +45,26 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
-        Container(
-          height: 100.0.hp,
-          width: 100.0.wp,
-          color: screenbackground,
-          child: Image.asset('assets/images/splash.gif'),
-        ),
-      ]),
+      backgroundColor: screenbackground,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Icon(
+              Icons.shopping_cart,
+              color: appcolor,
+              size: 40,
+            ),
+          ),
+          Center(
+            child: Image.asset(
+              'assets/images/splashlogo.PNG',
+              height: 25.0.hp,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

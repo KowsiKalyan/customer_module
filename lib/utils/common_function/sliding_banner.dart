@@ -23,7 +23,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgcolor,
+      //backgroundColor: bgcolor,
       body: Column(children: [
         Container(
           height: 18.0.hp,

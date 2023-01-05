@@ -2,8 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:customermodule/all_packages.dart';
-import 'package:customermodule/src/view/explore/myorder/delivered_order.dart';
-import 'package:customermodule/src/view/explore/myorder/shipped_order.dart';
+
 import 'package:customermodule/src/view/product/order_tracking.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -261,7 +260,7 @@ class _AddtocartUiState extends State<AddtocartUi> {
         bottomNavigationBar: Container(
           height: 8.0.hp,
           width: 100.0.wp,
-          color: screenbackground,
+          //color: screenbackground,
           child: ListTile(
             title: Text(
               '\u{20B9}171',

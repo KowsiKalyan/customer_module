@@ -23,7 +23,7 @@ class _DetailsSectionState extends State<DetailsSection> {
     return Column(
       children: [
         Container(
-          color: const Color(0xffD9D9D9).withOpacity(0.1),
+          //color: const Color(0xffD9D9D9).withOpacity(0.1),
           height: 7.00.hp,
           width: 95.00.wp,
           child: TextFormField(

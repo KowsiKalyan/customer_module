@@ -72,7 +72,7 @@ class BottomNavyBar extends StatelessWidget {
         width: 95.00.wp,
         // height: 7.00.hp,
         decoration: BoxDecoration(
-          color: Colors.white,
+          // color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             if (showElevation)
@@ -138,7 +138,7 @@ class _ItemWidget extends StatelessWidget {
       container: true,
       selected: isSelected,
       child: AnimatedContainer(
-        width: 60,
+        width: 65,
         height: double.maxFinite,
         duration: animationDuration,
         curve: curve,
