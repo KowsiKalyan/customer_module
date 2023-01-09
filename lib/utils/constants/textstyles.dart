@@ -58,6 +58,13 @@ final subtitleStyle = GoogleFonts.jost(
         letterSpacing: 0.1,
         fontSize: 12.00.sp,
         fontWeight: FontWeight.w500));
+
+final subtitleStylebold = GoogleFonts.jost(
+    textStyle: TextStyle(
+        wordSpacing: 1,
+        letterSpacing: 0.1,
+        fontSize: 12.00.sp,
+        fontWeight: FontWeight.bold));
 final subtitleStyleappcolor = GoogleFonts.jost(
     textStyle: TextStyle(
         wordSpacing: 1,
