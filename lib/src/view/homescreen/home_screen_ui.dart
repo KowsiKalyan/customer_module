@@ -49,39 +49,43 @@ class SearchBarHeaderDelegate extends SliverPersistentHeaderDelegate {
   ) {
     return Align(
         alignment: Alignment.topCenter,
-        child: Container(
-          padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10),
-          height: 6.0.hp,
-          color: Get.isDarkMode ? Colors.black : screenbackground,
-          child: GestureDetector(
-            child: TextFormField(
-              style: subtitleStyle,
-              decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: appcolor,
-                  ),
-                  suffixIcon: Icon(
-                    Icons.mic,
-                    color: appcolor,
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                    borderSide: BorderSide(color: appcolor, width: 1),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                    borderSide: BorderSide(color: Colors.black45, width: 1),
-                  ),
-                  fillColor: const Color(0xffC6C6C6),
-                  hintText: 'Search your products',
-                  contentPadding: const EdgeInsets.only(left: 10),
-                  hintStyle: formhintstylesearch,
-                  border: const OutlineInputBorder(
-                    gapPadding: 4,
-                  )),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10),
+              height: 6.0.hp,
+              color: Get.isDarkMode ? Colors.black : screenbackground,
+              child: GestureDetector(
+                child: TextFormField(
+                  style: subtitleStyle,
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: appcolor,
+                      ),
+                      suffixIcon: Icon(
+                        Icons.mic,
+                        color: appcolor,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        borderSide: BorderSide(color: appcolor, width: 1),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        borderSide: BorderSide(color: Colors.black45, width: 1),
+                      ),
+                      fillColor: const Color(0xffC6C6C6),
+                      hintText: 'Search your products',
+                      contentPadding: const EdgeInsets.only(left: 10),
+                      hintStyle: formhintstylesearch,
+                      border: const OutlineInputBorder(
+                        gapPadding: 4,
+                      )),
+                ),
+              ),
             ),
-          ),
+          ],
         ));
   }
 

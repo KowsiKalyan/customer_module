@@ -76,7 +76,8 @@ class _MyWidgetState extends State<MyWidget> {
                 isScrollable: true,
                 indicatorSize: TabBarIndicatorSize.label,
                 indicator: BoxDecoration(
-                    color: orange, borderRadius: BorderRadius.circular(25.0)),
+                    color: buttoncolor,
+                    borderRadius: BorderRadius.circular(25.0)),
                 labelColor: Colors.white,
                 unselectedLabelColor: Colors.black,
                 tabs: [

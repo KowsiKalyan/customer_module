@@ -1,15 +1,22 @@
 import 'package:customermodule/src/controller/theme_controller.dart';
-import 'package:customermodule/src/view/change%20theme/change_theme.dart';
+
 import 'package:customermodule/src/view/splash_screen.dart';
+import 'package:customermodule/utils/intro_screen.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:theme_manager/theme_manager.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'all_packages.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  var prefs = await SharedPreferences.getInstance();
+  var boolKey = 'isFirstTime';
+  var isFirstTime = prefs.getBool(boolKey) ?? true;
   await GetStorage.init();
-  runApp(MyApp());
+  runApp(GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:
+          isFirstTime ? IntroScreen(prefs: prefs, boolKey: boolKey) : MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -34,11 +41,7 @@ class MyApp extends StatelessWidget {
     //     });
 
     return SimpleBuilder(builder: (_) {
-      return GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: controller.theme,
-        home: SplashScreen(),
-      );
+      return SplashScreen();
     });
   }
 }

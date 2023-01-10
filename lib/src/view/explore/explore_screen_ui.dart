@@ -70,221 +70,253 @@ class _ExploreScreenState extends State<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          toolbarHeight: 13.0.hp,
-          automaticallyImplyLeading: false,
-          backgroundColor: screenbackground,
-          elevation: 0,
-          title: Column(
-            children: [
-              Container(
-                padding:
-                    const EdgeInsets.only(left: 10.0, right: 10.0, top: 10),
-                height: 6.0.hp,
-                color: Get.isDarkMode ? Colors.black : screenbackground,
-                child: GestureDetector(
-                  child: TextFormField(
-                    style: subtitleStyle,
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.search,
-                          color: appcolor,
-                        ),
-                        suffixIcon: Icon(
-                          Icons.mic,
-                          color: appcolor,
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: BorderSide(color: appcolor, width: 1),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide:
-                              BorderSide(color: Colors.black45, width: 1),
-                        ),
-                        fillColor: const Color(0xffC6C6C6),
-                        hintText: 'Search your products',
-                        contentPadding: const EdgeInsets.only(left: 10),
-                        hintStyle: formhintstylesearch,
-                        border: const OutlineInputBorder(
-                          gapPadding: 4,
-                        )),
+        appBar: AppBar(
+            toolbarHeight: 13.0.hp,
+            automaticallyImplyLeading: false,
+            backgroundColor: screenbackground,
+            elevation: 0,
+            title: Column(
+              children: [
+                Container(
+                  padding:
+                      const EdgeInsets.only(left: 10.0, right: 10.0, top: 10),
+                  height: 6.0.hp,
+                  color: Get.isDarkMode ? Colors.black : screenbackground,
+                  child: GestureDetector(
+                    child: TextFormField(
+                      style: subtitleStyle,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.search,
+                            color: appcolor,
+                          ),
+                          suffixIcon: Icon(
+                            Icons.mic,
+                            color: appcolor,
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                            borderSide: BorderSide(color: appcolor, width: 1),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                            borderSide:
+                                BorderSide(color: Colors.black45, width: 1),
+                          ),
+                          fillColor: const Color(0xffC6C6C6),
+                          hintText: 'Search your products',
+                          contentPadding: const EdgeInsets.only(left: 10),
+                          hintStyle: formhintstylesearch,
+                          border: const OutlineInputBorder(
+                            gapPadding: 4,
+                          )),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 1.0.hp,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-                        selectedindex = 0;
-                      });
-                    },
-                    child: Material(
-                      elevation: selectedindex == 0 ? 5 : 0,
-                      child: Container(
-                        height: 5.00.hp,
-                        width: 43.00.wp,
-                        decoration: BoxDecoration(
-                            color:
-                                selectedindex == 0 ? buttoncolor : Colors.white,
-                            border: Border.all(
+                SizedBox(
+                  height: 1.0.hp,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          selectedindex = 0;
+                        });
+                      },
+                      child: Material(
+                        elevation: selectedindex == 0 ? 5 : 0,
+                        child: Container(
+                          height: 5.00.hp,
+                          width: 43.00.wp,
+                          decoration: BoxDecoration(
                               color: selectedindex == 0
                                   ? buttoncolor
                                   : Colors.white,
-                            )),
-                        child: Center(
-                            child: Text(
-                          'All Products',
-                          style: GoogleFonts.jost(
-                              textStyle: TextStyle(
-                                  fontSize: 11.00.sp,
-                                  color: selectedindex == 0
-                                      ? Colors.white
-                                      : const Color(0xffA3A3A3),
-                                  fontWeight: FontWeight.w500)),
-                        )),
+                              border: Border.all(
+                                color: selectedindex == 0
+                                    ? buttoncolor
+                                    : Colors.white,
+                              )),
+                          child: Center(
+                              child: Text(
+                            'All Products',
+                            style: GoogleFonts.jost(
+                                textStyle: TextStyle(
+                                    fontSize: 11.00.sp,
+                                    color: selectedindex == 0
+                                        ? Colors.white
+                                        : const Color(0xffA3A3A3),
+                                    fontWeight: FontWeight.w500)),
+                          )),
+                        ),
                       ),
                     ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-                        selectedindex = 1;
-                      });
-                    },
-                    child: Material(
-                      elevation: selectedindex == 1 ? 5 : 0,
-                      child: Container(
-                        height: 5.00.hp,
-                        width: 43.00.wp,
-                        decoration: BoxDecoration(
-                            color:
-                                selectedindex == 1 ? buttoncolor : Colors.white,
-                            border: Border.all(
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          selectedindex = 1;
+                        });
+                      },
+                      child: Material(
+                        elevation: selectedindex == 1 ? 5 : 0,
+                        child: Container(
+                          height: 5.00.hp,
+                          width: 43.00.wp,
+                          decoration: BoxDecoration(
                               color: selectedindex == 1
                                   ? buttoncolor
-                                  : const Color(0xffC6C6C6).withOpacity(0.5),
-                            )),
-                        child: Center(
-                            child: Text(
-                          'All Sellers',
-                          style: GoogleFonts.jost(
-                              textStyle: TextStyle(
-                                  fontSize: 11.00.sp,
-                                  color: selectedindex == 1
-                                      ? Colors.white
-                                      : const Color(0xffA3A3A3),
-                                  fontWeight: FontWeight.w500)),
-                        )),
+                                  : Colors.white,
+                              border: Border.all(
+                                color: selectedindex == 1
+                                    ? buttoncolor
+                                    : const Color(0xffC6C6C6).withOpacity(0.5),
+                              )),
+                          child: Center(
+                              child: Text(
+                            'All Sellers',
+                            style: GoogleFonts.jost(
+                                textStyle: TextStyle(
+                                    fontSize: 11.00.sp,
+                                    color: selectedindex == 1
+                                        ? Colors.white
+                                        : const Color(0xffA3A3A3),
+                                    fontWeight: FontWeight.w500)),
+                          )),
+                        ),
                       ),
-                    ),
-                  )
+                    )
+                  ],
+                ),
+
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     Padding(
+                //       padding: const EdgeInsets.only(left: 10.0),
+                //       child: Container(
+                //           height: 6.00.hp,
+                //           width: 40.00.wp,
+                //           child: DropdownButtonHideUnderline(
+                //             child: DropdownButton<String>(
+                //               style: GoogleFonts.jost(
+                //                   textStyle: TextStyle(
+                //                       fontSize: 10.00.sp,
+                //                       color: forminputcolor,
+                //                       fontWeight: FontWeight.w500)),
+                //               hint: Center(
+                //                 child: Text('Sort By',
+                //                     style: GoogleFonts.jost(
+                //                         textStyle: TextStyle(
+                //                             fontSize: 10.00.sp,
+                //                             color: appcolor,
+                //                             fontWeight: FontWeight.w500))),
+                //               ),
+                //               // onChanged: (String? newValue) async {
+                //               //   setState(() {
+                //               //     selectstate = newValue.toString();
+                //               //   });
+                //               // },
+                //               icon: Image.asset(
+                //                 'assets/images/arrow.png',
+                //                 color: appcolor,
+                //                 height: 20,
+                //                 width: 20,
+                //               ),
+                //               items: state.map<DropdownMenuItem<String>>((items) {
+                //                 return DropdownMenuItem<String>(
+                //                   value: items,
+                //                   child: Container(
+                //                       child: Text(items.toString(),
+                //                           style: GoogleFonts.jost(
+                //                               textStyle: TextStyle(
+                //                                   fontSize: 10.00.sp,
+                //                                   color: appcolor,
+                //                                   fontWeight: FontWeight.w500)))),
+                //                 );
+                //               }).toList(),
+                //               value: selectstate,
+                //               onChanged: (value) {
+                //                 setState(() {
+                //                   selectstate = value!;
+                //                 });
+                //               },
+                //             ),
+                //           )),
+                //     ),
+                //     Icon(
+                //       Icons.filter_alt,
+                //       color: appcolor,
+                //     )
+                //   ],
+                // ),
+              ],
+            )),
+        // body: selectedindex == 0 ? AllProductExplorePage() : AllSellersScreen(),
+        body: selectedindex == 0
+            ? CustomScrollView(
+                slivers: [
+                  SliverAppBar(
+                      backgroundColor: screenbackground,
+                      automaticallyImplyLeading: false,
+                      toolbarHeight: 12.0.hp,
+                      floating: true,
+                      pinned: true,
+                      titleSpacing: 0,
+                      title: Wrap(
+                        children: [
+                          Container(
+                              child: Padding(
+                            padding: const EdgeInsets.only(
+                              left: 5.0,
+                            ),
+                            child: ListTile(
+                                title: TextButton(
+                                  onPressed: () {
+                                    showdialog();
+                                  },
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'Sort by',
+                                        style: subtitleStyleappcolor,
+                                      ),
+                                      Icon(
+                                        Icons.arrow_drop_down,
+                                        color: appcolor,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                trailing: IconButton(
+                                    onPressed: (() {
+                                      Get.to(AllProductsFilter());
+                                    }),
+                                    icon: Icon(
+                                      Icons.filter_alt,
+                                      color: appcolor,
+                                    ))),
+                          )),
+                          Divider(),
+                          Container(
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 5.0),
+                            child: ListTile(
+                              title: Text('Search items'),
+                              trailing: Text('4 items found'),
+                            ),
+                          )),
+                        ],
+                      )),
+                  SliverToBoxAdapter(
+                    child: Container(
+                        child: Column(
+                      children: [AllProductExplorePage()],
+                    )),
+                  ),
                 ],
-              ),
-
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     Padding(
-              //       padding: const EdgeInsets.only(left: 10.0),
-              //       child: Container(
-              //           height: 6.00.hp,
-              //           width: 40.00.wp,
-              //           child: DropdownButtonHideUnderline(
-              //             child: DropdownButton<String>(
-              //               style: GoogleFonts.jost(
-              //                   textStyle: TextStyle(
-              //                       fontSize: 10.00.sp,
-              //                       color: forminputcolor,
-              //                       fontWeight: FontWeight.w500)),
-              //               hint: Center(
-              //                 child: Text('Sort By',
-              //                     style: GoogleFonts.jost(
-              //                         textStyle: TextStyle(
-              //                             fontSize: 10.00.sp,
-              //                             color: appcolor,
-              //                             fontWeight: FontWeight.w500))),
-              //               ),
-              //               // onChanged: (String? newValue) async {
-              //               //   setState(() {
-              //               //     selectstate = newValue.toString();
-              //               //   });
-              //               // },
-              //               icon: Image.asset(
-              //                 'assets/images/arrow.png',
-              //                 color: appcolor,
-              //                 height: 20,
-              //                 width: 20,
-              //               ),
-              //               items: state.map<DropdownMenuItem<String>>((items) {
-              //                 return DropdownMenuItem<String>(
-              //                   value: items,
-              //                   child: Container(
-              //                       child: Text(items.toString(),
-              //                           style: GoogleFonts.jost(
-              //                               textStyle: TextStyle(
-              //                                   fontSize: 10.00.sp,
-              //                                   color: appcolor,
-              //                                   fontWeight: FontWeight.w500)))),
-              //                 );
-              //               }).toList(),
-              //               value: selectstate,
-              //               onChanged: (value) {
-              //                 setState(() {
-              //                   selectstate = value!;
-              //                 });
-              //               },
-              //             ),
-              //           )),
-              //     ),
-              //     Icon(
-              //       Icons.filter_alt,
-              //       color: appcolor,
-              //     )
-              //   ],
-              // ),
-
-              // Padding(
-              //   padding: const EdgeInsets.only(left: 5.0),
-              //   child: Row(
-              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //       children: [
-              //         TextButton(
-              //           onPressed: () {
-              //             showdialog();
-              //           },
-              //           child: Row(
-              //             children: [
-              //               Text(
-              //                 'Sort by',
-              //                 style: subtitleStyleappcolor,
-              //               ),
-              //               Icon(
-              //                 Icons.arrow_drop_down,
-              //                 color: appcolor,
-              //               ),
-              //             ],
-              //           ),
-              //         ),
-              //         IconButton(
-              //             onPressed: (() {
-              //               Get.to(AllProductsFilter());
-              //             }),
-              //             icon: Icon(
-              //               Icons.filter_alt,
-              //               color: appcolor,
-              //             ))
-              //       ]),
-              // )
-            ],
-          )),
-      body: selectedindex == 0 ? AllProductExplorePage() : AllSellersScreen(),
-    );
+              )
+            : AllSellersScreen());
   }
 }

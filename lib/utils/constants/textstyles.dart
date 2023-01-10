@@ -272,3 +272,9 @@ final orderdetailsblue = GoogleFonts.jost(
         decoration: TextDecoration.none,
         color: Colors.blue,
         fontWeight: FontWeight.bold));
+final titleTextStyle = GoogleFonts.jost(
+    textStyle: TextStyle(
+        fontSize: 16.00.sp,
+        decoration: TextDecoration.none,
+        color: toptitlecolor,
+        fontWeight: FontWeight.bold));

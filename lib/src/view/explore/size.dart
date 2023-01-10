@@ -166,43 +166,6 @@ class _SizeExploreState extends State<SizeExplore> {
                   childAspectRatio: 6 / 3),
             ),
           ),
-          SizedBox(
-            height: 1.0.hp,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                height: 5.0.hp,
-                width: 30.0.wp,
-                decoration: BoxDecoration(
-                    color: buttoncolor,
-                    borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                    child: Text(
-                  'Discard',
-                  style: buttontext,
-                )),
-              ),
-              InkWell(
-                onTap: (() {
-                  Get.back();
-                }),
-                child: Container(
-                  height: 5.0.hp,
-                  width: 30.0.wp,
-                  decoration: BoxDecoration(
-                      color: buttoncolor,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Center(
-                      child: Text(
-                    'Apply',
-                    style: buttontext,
-                  )),
-                ),
-              )
-            ],
-          )
         ],
       ),
     );

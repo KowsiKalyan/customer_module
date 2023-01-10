@@ -6,18 +6,26 @@ import 'package:customermodule/src/view/explore/size.dart';
 
 import 'expandable_storage.dart';
 
-class AllProductsFilter extends StatefulWidget {
-  const AllProductsFilter({super.key});
+class AllSellerFilter extends StatefulWidget {
+  const AllSellerFilter({super.key});
 
   @override
-  State<AllProductsFilter> createState() => _AllProductsFilterState();
+  State<AllSellerFilter> createState() => _AllSellerFilterState();
 }
 
-class _AllProductsFilterState extends State<AllProductsFilter> {
+class _AllSellerFilterState extends State<AllSellerFilter> {
   RangeValues _currentRangeValues = const RangeValues(0, 80);
   var selectedindex;
   var selectedcolorindex;
   var colors = [Color(0xFF2196F3), Color(0xFFF44336), amber];
+
+  var wirelessindex;
+
+  var images = [
+    'assets/images/dress1.jpg',
+    'assets/images/dress2.jpg',
+    'assets/images/dress3.jpg'
+  ];
   var selectedcolorsoutline = [
     Color(0xFF77B9F0),
     Color(0xFFF3847C),
@@ -35,7 +43,7 @@ class _AllProductsFilterState extends State<AllProductsFilter> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20.0, top: 5),
+        padding: const EdgeInsets.only(left: 20.0, top: 15.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -155,25 +163,56 @@ class _AllProductsFilterState extends State<AllProductsFilter> {
               ),
               Divider(),
               Text(
-                'Connectivity Technologies',
+                'Wireless Communication Technologies',
                 style: subtitleStylebold,
               ),
               SizedBox(
-                height: 1.0.hp,
+                height: 2.0.hp,
               ),
-              ConnectivityTech(),
-              Divider(),
               SizedBox(
-                height: 1.0.hp,
+                height: 10.0.hp,
+                width: 100.0.wp,
+                child: GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: images.length,
+                  itemBuilder: ((context, index1) {
+                    return InkWell(
+                      onTap: (() {
+                        setState(() {
+                          wirelessindex = index1;
+                        });
+                      }),
+                      child: Container(
+                        height: 4.0.hp,
+                        width: 18.0.wp,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(images[index1].toString())),
+                            color: wirelessindex == index1
+                                ? appcolor
+                                : screenbackground,
+                            border: Border.all(
+                                color: wirelessindex == index1
+                                    ? appcolor
+                                    : formhintcolor),
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    );
+                  }),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 5,
+                      mainAxisSpacing: 5.0,
+                      crossAxisSpacing: 10,
+                      childAspectRatio: 2.50 / 3),
+                ),
               ),
-              ExpandableStorage(),
-              Divider(),
-              SizeExplore(),
               SizedBox(
-                height: 1.0.hp,
+                height: 20.0.hp,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Container(
                     height: 5.0.hp,
