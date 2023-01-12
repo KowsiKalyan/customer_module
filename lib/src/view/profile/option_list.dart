@@ -1,5 +1,6 @@
 import 'package:customermodule/src/view/profile/wallet/wallet_screen.dart';
 import 'package:flutter_share/flutter_share.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:theme_manager/change_theme_widget.dart';
 import 'package:theme_manager/theme_manager.dart';
@@ -12,6 +13,7 @@ import '../about us/about_us_sreen.dart';
 import '../change theme/change_theme.dart';
 import '../changepassword/change_password.dart';
 import '../contact us/contact_us_screen.dart';
+import '../customer_support/customer_support.dart';
 import '../faq/faq_ui_screen.dart';
 import '../privacy policy/privacy_policy_screen.dart';
 import '../product/deiveryaddress_screen.dart';
@@ -41,6 +43,7 @@ class OptionList extends StatelessWidget {
     }
   }
 
+  var appdata = GetStorage();
   Future share() async {
     await FlutterShare.share(
         title: 'cShop Multi',
@@ -109,28 +112,45 @@ class OptionList extends StatelessWidget {
         //   ),
         //   false.obs,
         // ),
-        SwitchListTile(
-          activeColor: appcolor,
-          autofocus: true,
-          value: controller.isDark,
-          title: Row(
-            children: [
-              Image.asset(
-                'assets/profile/theme.png',
-                height: 3.0.hp,
-              ),
-              SizedBox(
-                width: 5.0.wp,
-              ),
-              Text(
-                'CHANGE THEME',
-                style: orderdetails,
-              )
-            ],
-          ),
-          onChanged: controller.changeTheme,
-        ),
+        SimpleBuilder(builder: (_) {
+          return SwitchListTile(
+            activeColor: appcolor,
+            autofocus: true,
+            value: controller.isDark,
+            title: Row(
+              children: [
+                Image.asset(
+                  'assets/profile/theme.png',
+                  height: 3.0.hp,
+                ),
+                SizedBox(
+                  width: 5.0.wp,
+                ),
+                Text(
+                  'CHANGE THEME',
+                  style: orderdetails,
+                )
+              ],
+            ),
+            onChanged: controller.changeTheme,
+          );
+        }),
+        // SimpleBuilder(builder: (_) {
+        //   return SwitchListTile(
+        //     value: controller.isDark,
+        //     title: Text("Touch to change ThemeMode"),
+        //     onChanged: controller.changeTheme,
+        //   );
+        // }),
 
+        // GetBuilder<SettingsController>(builder: (_) {
+        //   return Switch(
+        //     value: controller.isDarkMode,
+        //     onChanged: (value) {
+        //       controller.thememode();
+        //     },
+        //   );
+        // }),
         InkWell(
           onTap: (() {}),
           child: ProfileCustomWidget(
@@ -160,7 +180,9 @@ class OptionList extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: (() {}),
+          onTap: (() {
+            Get.to(CustomerSupport());
+          }),
           child: ProfileCustomWidget(
             image: 'assets/profile/support.png',
             text: 'CUSTOMER SUPPORT',

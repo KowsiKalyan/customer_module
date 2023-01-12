@@ -25,9 +25,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   var textindex = 0;
   var text = [
     'assets/images/Home-Slider.png',
-    'assets/images/02.png',
-    'assets/images/03.png',
-    'assets/images/04.png'
+    'assets/images/dress1.jpg',
+    'assets/images/dress3.jpg',
+    'assets/images/dress4.jpg'
   ];
   var firstBuild = 0;
   Timer? timer;
@@ -148,7 +148,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   // border: Border.all(),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Image.asset(text[textindex]),
+                child: Image.asset(
+                  text[textindex],
+                  fit: BoxFit.cover,
+                ),
               ),
               SizedBox(
                 height: 2.00.hp,

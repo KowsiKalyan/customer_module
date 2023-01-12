@@ -1,6 +1,8 @@
 import 'package:customermodule/all_packages.dart';
 
 import 'homescreen/home_screen_ui.dart';
+import 'notification/notification_screen.dart';
+import 'wishlist/wishlist_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -43,20 +45,30 @@ class _DashboardScreenState extends State<DashboardScreen> {
               child: const Icon(Icons.arrow_back)),
         ),
         actions: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(right: 15.0),
-            child: Icon(
-              Icons.add_shopping_cart_rounded,
-              color: screenbackground,
-              size: 20,
+            child: InkWell(
+              onTap: (() {
+                Get.to(WishlistScreen());
+              }),
+              child: Icon(
+                Icons.favorite,
+                color: screenbackground,
+                size: 25,
+              ),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(right: 15.0),
-            child: Icon(
-              Icons.notifications,
-              color: screenbackground,
-              size: 20,
+            child: InkWell(
+              onTap: (() {
+                Get.to(NotificationScreen());
+              }),
+              child: Icon(
+                Icons.notifications_on,
+                color: screenbackground,
+                size: 25,
+              ),
             ),
           ),
         ],

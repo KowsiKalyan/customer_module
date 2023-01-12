@@ -55,14 +55,14 @@ class _CouponcodeScreenState extends State<CouponcodeScreen> {
                               });
                             }),
                             child: Container(
-                              height: 5.0.hp,
+                              height: 7.0.hp,
                               width: 100.0.wp,
                               // decoration: BoxDecoration(
                               //     color: screenbackground,
                               //     borderRadius: BorderRadius.circular(20)),
                               child: Card(
                                 color: selectedindex == index
-                                    ? appcolor
+                                    ? buttoncolor
                                     : screenbackground,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -99,14 +99,14 @@ class _CouponcodeScreenState extends State<CouponcodeScreen> {
                               });
                             }),
                             child: Container(
-                              height: 5.0.hp,
+                              height: 7.0.hp,
                               width: 100.0.wp,
                               // decoration: BoxDecoration(
                               //     color: screenbackground,
                               //     borderRadius: BorderRadius.circular(20)),
                               child: Card(
                                 color: selectedindex == index
-                                    ? appcolor
+                                    ? buttoncolor
                                     : screenbackground,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -169,6 +169,7 @@ class _CouponcodeScreenState extends State<CouponcodeScreen> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10)),
                             child: Card(
+                              shadowColor: appcolor,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                                 //set border radius more than 50% of height and width to make circle
@@ -387,7 +388,7 @@ class _CouponcodeScreenState extends State<CouponcodeScreen> {
                                             decoration: BoxDecoration(
                                               border: Border.all(
                                                   color: Colors.grey.shade200),
-                                              color: Color(0xff283736),
+                                              color: appcolor,
                                               borderRadius:
                                                   BorderRadius.circular(10),
                                             ),

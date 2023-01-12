@@ -1,3 +1,4 @@
+import 'package:customermodule/src/controller/theme_controller.dart';
 import 'package:customermodule/src/view/profile/option_list.dart';
 import 'package:customermodule/src/view/profile/profile_section.dart';
 
@@ -11,6 +12,8 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
+  SettingsController settingsController = Get.put(SettingsController());
+  @override
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -18,21 +21,24 @@ class _MenuScreenState extends State<MenuScreen> {
         return true;
       },
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: appcolor,
+          toolbarHeight: 12.0.hp,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(40),
+            ),
+          ),
+          automaticallyImplyLeading: false,
+          title: const ProfileSection(),
+        ),
         body: SafeArea(
             child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: 3.00.hp,
-              ),
-              const ProfileSection(),
-              SizedBox(
-                height: 3.00.hp,
-              ),
               Container(
                 width: 100.00.wp,
                 decoration: BoxDecoration(
-                    //   color: bgcolor,
                     borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   topRight: Radius.circular(20.0),

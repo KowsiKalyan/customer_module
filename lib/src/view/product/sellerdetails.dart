@@ -1,4 +1,8 @@
+import 'package:customermodule/src/view/explore/all_sellerdetsils_explore.dart';
+import 'package:customermodule/src/view/explore/allseller_ui.dart';
+
 import '../../../all_packages.dart';
+import '../explore/storedetails_ui.dart';
 
 class SellerDetailsScreen extends StatefulWidget {
   const SellerDetailsScreen({super.key});
@@ -20,18 +24,27 @@ class _SellerDetailsScreenState extends State<SellerDetailsScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'seller details ',
-              style: subtitleStyle,
+            Row(
+              children: [
+                Text(
+                  'seller details ',
+                  style: subtitleStyle,
+                ),
+                Text(
+                  'Cshop Store ',
+                  style: subtitleStyleappcolor,
+                ),
+              ],
             ),
-            Text(
-              'Cshop Store ',
-              style: subtitleStyleappcolor,
-            ),
-            Icon(
-              Icons.arrow_forward_ios,
-              color: appcolor,
-              size: 15,
+            InkWell(
+              onTap: (() {
+                Get.to(StorenameDetails());
+              }),
+              child: Icon(
+                Icons.arrow_forward_ios,
+                color: appcolor,
+                size: 15,
+              ),
             )
           ],
         ),
@@ -42,23 +55,17 @@ class _SellerDetailsScreenState extends State<SellerDetailsScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
-              height: 10.0.hp,
-              width: 20.0.wp,
-              //color: Color.fromARGB(255, 238, 238, 238),
-              child: Icon(
-                Icons.cancel_presentation_outlined,
-                color: Colors.red,
-              ),
-            ),
+                height: 5.0.hp,
+                width: 20.0.wp,
+                //color: Color.fromARGB(255, 238, 238, 238),
+                child: Image.asset(
+                  'assets/images/cancel.png',
+                )),
             Container(
-              height: 10.0.hp,
-              width: 20.0.wp,
-              // color: Color.fromARGB(255, 238, 238, 238),
-              child: Icon(
-                Icons.keyboard_return_outlined,
-                color: Colors.red,
-              ),
-            )
+                height: 5.0.hp,
+                width: 20.0.wp,
+                //color: Color.fromARGB(255, 238, 238, 238),
+                child: Image.asset('assets/images/return.png')),
           ],
         ),
         SizedBox(

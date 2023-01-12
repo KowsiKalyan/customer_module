@@ -64,6 +64,13 @@ dependencies:
   url_launcher: ^6.1.7
   easy_sticky_header: ^1.0.5
   introduction_screen: ^3.1.2
+  firebase_core: ^2.4.1
+  firebase_auth: ^4.2.5
+  cloud_firestore: ^4.3.1
+  chat_bubbles: ^1.4.0
+  cached_network_image: ^3.2.3
+  audioplayers: ^2.0.0
+  flutter_chat_bubble: ^2.0.0
   
  
  

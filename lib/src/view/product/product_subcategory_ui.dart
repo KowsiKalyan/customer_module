@@ -152,7 +152,7 @@ class SearchBarHeaderDelegates extends SliverPersistentHeaderDelegate {
     return Align(
       alignment: Alignment.topCenter,
       child: Container(
-        padding: const EdgeInsets.all(5),
+        padding: const EdgeInsets.only(left: 5, right: 5),
         // color: bgcolor,
         child: GestureDetector(
           child: Card(
@@ -180,8 +180,8 @@ class SearchBarHeaderDelegates extends SliverPersistentHeaderDelegate {
               VerticalDivider(
                 width: 2,
                 thickness: 2,
-                endIndent: 10,
-                indent: 10,
+                endIndent: 15,
+                indent: 15,
               ),
               Row(
                 children: [

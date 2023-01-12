@@ -154,15 +154,9 @@ final apptitle = GoogleFonts.jost(
         color: screenbackground,
         fontWeight: FontWeight.w600));
 final notificationtitle = GoogleFonts.jost(
-    textStyle: TextStyle(
-        fontSize: 12.00.sp,
-        color: const Color(0xff000000),
-        fontWeight: FontWeight.w600));
+    textStyle: TextStyle(fontSize: 12.00.sp, fontWeight: FontWeight.w600));
 final notificationsubtitle = GoogleFonts.jost(
-    textStyle: TextStyle(
-        fontSize: 9.00.sp,
-        color: const Color(0xff000000),
-        fontWeight: FontWeight.w700));
+    textStyle: TextStyle(fontSize: 9.00.sp, fontWeight: FontWeight.w700));
 final notificationsubtitleappcolor = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 9.00.sp, color: appcolor, fontWeight: FontWeight.w900));
@@ -170,7 +164,7 @@ final notificationtime = GoogleFonts.jost(
     textStyle: TextStyle(
         fontSize: 12.00.sp,
         letterSpacing: 1,
-        color: const Color(0xffAAA9A9),
+        color: appcolor,
         fontWeight: FontWeight.w500));
 final abouttext = GoogleFonts.jost(
     textStyle: TextStyle(
