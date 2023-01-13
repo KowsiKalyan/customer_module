@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 import '../../../all_packages.dart';
@@ -76,83 +78,175 @@ class _CategoryScreenState extends State<CategoryScreen> {
     super.initState();
   }
 
+  final ScrollController _scrollBottomBarController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: TextFormField(
-          decoration: InputDecoration(
-              hintText: 'All Categories',
-              hintStyle: apptitle,
-              border: InputBorder.none),
-          style: apptitle,
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 30),
-            child: Icon(
-              Icons.search,
-            ),
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            'All Categories',
+            style: apptitle,
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 30),
-            child: Icon(
-              Icons.mic,
-            ),
-          )
-        ],
-        backgroundColor: appcolor,
-      ),
-      body: Scaffold(
-        //  backgroundColor: bgcolor,
-        body: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: GridView.builder(
-                primary: false,
-                itemCount: image.length,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {
-                      Get.to(Productsubcategory(
-                        index: index.toString(),
-                        text: '',
-                      ));
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          top: 2.0.hp, left: 1.0.wp, right: 1.0.wp),
+          backgroundColor: appcolor,
+        ),
+        body: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
+            controller: _scrollBottomBarController,
+            slivers: [
+              SliverAppBar(
+                  floating: false,
+                  pinned: true,
+                  automaticallyImplyLeading: false,
+                  toolbarHeight: 8.0.hp,
+                  backgroundColor: Get.isDarkMode
+                      ? Color.fromARGB(255, 46, 45, 45)
+                      : screenbackground,
+                  titleSpacing: 0,
+                  title: Align(
+                      alignment: Alignment.topCenter,
                       child: Column(
                         children: [
                           Container(
-                            height: 7.0.hp,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(image[index])),
-                                shape: BoxShape.circle,
-                                color: appcolor),
-                          ),
-                          Container(
-                            width: 32.0.wp,
-                            child: Center(
-                              child: Text(
-                                productname[index],
-                                style: orderdetails,
+                            padding: const EdgeInsets.only(
+                                left: 10.0, right: 10.0, top: 10),
+                            height: 6.0.hp,
+                            child: GestureDetector(
+                              child: TextFormField(
+                                style: subtitleStyle,
+                                decoration: InputDecoration(
+                                    prefixIcon: Icon(
+                                      Icons.search,
+                                      color: appcolor,
+                                    ),
+                                    suffixIcon: Icon(
+                                      Icons.mic,
+                                      color: appcolor,
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      borderSide:
+                                          BorderSide(color: appcolor, width: 1),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      borderSide: BorderSide(
+                                          color: formhintcolor, width: 1),
+                                    ),
+                                    fillColor: const Color(0xffC6C6C6),
+                                    hintText: 'Search your products',
+                                    contentPadding:
+                                        const EdgeInsets.only(left: 10),
+                                    hintStyle: formhintstylesearch,
+                                    border: const OutlineInputBorder(
+                                      gapPadding: 4,
+                                    )),
                               ),
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                  );
-                },
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    mainAxisSpacing: 1.0,
-                    childAspectRatio: 2.5 / 3))),
-      ),
-    );
+                      ))),
+              SliverToBoxAdapter(
+                  child: GridView.builder(
+                      primary: false,
+                      itemCount: image.length,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Get.to(Productsubcategory(
+                              index: index.toString(),
+                              text: '',
+                            ));
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 7.0.hp,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: AssetImage(image[index])),
+                                    shape: BoxShape.circle,
+                                    color: appcolor),
+                              ),
+                              SizedBox(
+                                height: 1.0.hp,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Flexible(
+                                    child: Text(
+                                      productname[index],
+                                      style: orderdetails,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 4,
+                              mainAxisSpacing: 1.0,
+                              childAspectRatio: 2.5 / 3))),
+            ]));
   }
 }
+        //  backgroundColor: bgcolor,
+//         body: SingleChildScrollView(
+//             scrollDirection: Axis.vertical,
+//             child: GridView.builder(
+//                 primary: false,
+//                 itemCount: image.length,
+//                 shrinkWrap: true,
+//                 physics: const NeverScrollableScrollPhysics(),
+//                 itemBuilder: (context, index) {
+//                   return InkWell(
+//                     onTap: () {
+//                       Get.to(Productsubcategory(
+//                         index: index.toString(),
+//                         text: '',
+//                       ));
+//                     },
+//                     child: Padding(
+//                       padding: EdgeInsets.only(
+//                           top: 2.0.hp, left: 1.0.wp, right: 1.0.wp),
+//                       child: Column(
+//                         children: [
+//                           Container(
+//                             height: 7.0.hp,
+//                             decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     fit: BoxFit.cover,
+//                                     image: AssetImage(image[index])),
+//                                 shape: BoxShape.circle,
+//                                 color: appcolor),
+//                           ),
+//                           Container(
+//                             width: 32.0.wp,
+//                             child: Center(
+//                               child: Text(
+//                                 productname[index],
+//                                 style: orderdetails,
+//                               ),
+//                             ),
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//                   );
+//                 },
+//                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+//                     crossAxisCount: 4,
+//                     mainAxisSpacing: 1.0,
+//                     childAspectRatio: 2.5 / 3))),
+//       ),
+//     );
+//   }
+// }

@@ -76,7 +76,7 @@ final product = GoogleFonts.jost(
     textStyle: TextStyle(
         wordSpacing: 2,
         letterSpacing: 0.2,
-        fontSize: 10.00.sp,
+        fontSize: 12.00.sp,
         color: toptitlecolor,
         fontWeight: FontWeight.w500));
 final productbold = GoogleFonts.jost(

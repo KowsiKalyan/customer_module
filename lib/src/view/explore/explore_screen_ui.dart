@@ -19,53 +19,10 @@ class ExploreScreen extends StatefulWidget {
 
 class _ExploreScreenState extends State<ExploreScreen> {
   var selectedindex = 0;
-  var sortednameindex = 0;
+
   final ScrollController _scrollBottomBarController = ScrollController();
-  var sorted = [
-    'Top Rated',
-    'Newest First',
-    'Oldest First',
-    'Price-Low to High',
-    'Price-High to Low'
-  ];
+
   var selectstate;
-  showdialog() async {
-    showModalBottomSheet<void>(
-        context: context,
-        builder: (BuildContext context) {
-          return StatefulBuilder(builder: (context, setState) {
-            return SizedBox(
-              height: 30.0.hp,
-              child: ListView.builder(
-                  itemCount: sorted.length,
-                  itemBuilder: ((context, index) {
-                    return InkWell(
-                      onTap: (() {
-                        setState(
-                          () {
-                            sortednameindex = index;
-                          },
-                        );
-                      }),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 28.0, right: 28.0, top: 10),
-                        child: Container(
-                            height: 5.0.hp,
-                            width: 80.0.wp,
-                            color: sortednameindex == index ? appcolor : null,
-                            child: Center(
-                                child: Text(
-                              sorted[index].toString(),
-                              style: orderdetails,
-                            ))),
-                      ),
-                    );
-                  })),
-            );
-          });
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -189,134 +146,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     )
                   ],
                 ),
-
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   children: [
-                //     Padding(
-                //       padding: const EdgeInsets.only(left: 10.0),
-                //       child: Container(
-                //           height: 6.00.hp,
-                //           width: 40.00.wp,
-                //           child: DropdownButtonHideUnderline(
-                //             child: DropdownButton<String>(
-                //               style: GoogleFonts.jost(
-                //                   textStyle: TextStyle(
-                //                       fontSize: 10.00.sp,
-                //                       color: forminputcolor,
-                //                       fontWeight: FontWeight.w500)),
-                //               hint: Center(
-                //                 child: Text('Sort By',
-                //                     style: GoogleFonts.jost(
-                //                         textStyle: TextStyle(
-                //                             fontSize: 10.00.sp,
-                //                             color: appcolor,
-                //                             fontWeight: FontWeight.w500))),
-                //               ),
-                //               // onChanged: (String? newValue) async {
-                //               //   setState(() {
-                //               //     selectstate = newValue.toString();
-                //               //   });
-                //               // },
-                //               icon: Image.asset(
-                //                 'assets/images/arrow.png',
-                //                 color: appcolor,
-                //                 height: 20,
-                //                 width: 20,
-                //               ),
-                //               items: state.map<DropdownMenuItem<String>>((items) {
-                //                 return DropdownMenuItem<String>(
-                //                   value: items,
-                //                   child: Container(
-                //                       child: Text(items.toString(),
-                //                           style: GoogleFonts.jost(
-                //                               textStyle: TextStyle(
-                //                                   fontSize: 10.00.sp,
-                //                                   color: appcolor,
-                //                                   fontWeight: FontWeight.w500)))),
-                //                 );
-                //               }).toList(),
-                //               value: selectstate,
-                //               onChanged: (value) {
-                //                 setState(() {
-                //                   selectstate = value!;
-                //                 });
-                //               },
-                //             ),
-                //           )),
-                //     ),
-                //     Icon(
-                //       Icons.filter_alt,
-                //       color: appcolor,
-                //     )
-                //   ],
-                // ),
               ],
             )),
-        // body: selectedindex == 0 ? AllProductExplorePage() : AllSellersScreen(),
-        body: selectedindex == 0
-            ? CustomScrollView(
-                slivers: [
-                  SliverAppBar(
-                      backgroundColor: screenbackground,
-                      automaticallyImplyLeading: false,
-                      toolbarHeight: 12.0.hp,
-                      floating: true,
-                      pinned: true,
-                      titleSpacing: 0,
-                      title: Wrap(
-                        children: [
-                          Container(
-                              child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 5.0,
-                            ),
-                            child: ListTile(
-                                title: TextButton(
-                                  onPressed: () {
-                                    showdialog();
-                                  },
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        'Sort by',
-                                        style: subtitleStyleappcolor,
-                                      ),
-                                      Icon(
-                                        Icons.arrow_drop_down,
-                                        color: appcolor,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                trailing: IconButton(
-                                    onPressed: (() {
-                                      Get.to(AllProductsFilter());
-                                    }),
-                                    icon: Icon(
-                                      Icons.filter_alt,
-                                      color: appcolor,
-                                    ))),
-                          )),
-                          Divider(),
-                          Container(
-                              child: Padding(
-                            padding: const EdgeInsets.only(left: 5.0),
-                            child: ListTile(
-                              title: Text('Search items'),
-                              trailing: Text('4 items found'),
-                            ),
-                          )),
-                        ],
-                      )),
-                  SliverToBoxAdapter(
-                    child: Container(
-                        child: Column(
-                      children: [AllProductExplorePage()],
-                    )),
-                  ),
-                ],
-              )
-            : AllSellersScreen());
+        body:
+            selectedindex == 0 ? AllProductExplorePage() : AllSellersScreen());
   }
 }

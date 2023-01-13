@@ -1,4 +1,6 @@
 import 'package:customermodule/src/view/My%20order/rating_screen.dart';
+import 'package:customermodule/src/view/customer_support/customer_support.dart';
+import 'package:customermodule/src/view/product/deiveryaddress_screen.dart';
 
 import 'package:customermodule/utils/common_function/row_customwidget.dart';
 
@@ -57,6 +59,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
       backgroundColor: bgcolor,
       appBar: AppBar(
         backgroundColor: appcolor,
+        centerTitle: true,
         title: Text(
           'Order details',
           style: apptitle,
@@ -85,8 +88,8 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   Row(
                     children: [
                       Text(
-                        'Payment mode',
-                        style: formhintstylesearch,
+                        'Payment mode:',
+                        style: shippingdetails,
                       ),
                       SizedBox(
                         width: 2.0.wp,
@@ -104,54 +107,59 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
           SizedBox(
             height: 2.0.hp,
           ),
-          Container(
-            height: 7.0.hp,
-            width: 100.0.wp,
-            color: screenbackground,
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: 28.0,
-                right: 28,
-                top: 10,
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.headphones,
-                    color: appcolor,
-                  ),
-                  SizedBox(
-                    width: 2.0.wp,
-                  ),
-                  Text(
-                    'Help Center',
-                    style: orderdetails,
-                  ),
-                  SizedBox(
-                    width: 30.0.wp,
-                  ),
-                  Container(
-                    height: 3.0.hp,
-                    width: 12.0.wp,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(255, 165, 200, 229),
+          InkWell(
+            onTap: (() {
+              Get.to(CustomerSupport());
+            }),
+            child: Container(
+              height: 7.0.hp,
+              width: 100.0.wp,
+              color: screenbackground,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 28.0,
+                  right: 28,
+                  top: 10,
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.headphones,
+                      color: appcolor,
                     ),
-                    child: Center(
-                      child: Text(
-                        'new',
-                        style: orderdetails,
+                    SizedBox(
+                      width: 2.0.wp,
+                    ),
+                    Text(
+                      'Help Center',
+                      style: orderdetails,
+                    ),
+                    SizedBox(
+                      width: 30.0.wp,
+                    ),
+                    Container(
+                      height: 3.0.hp,
+                      width: 12.0.wp,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color.fromARGB(255, 165, 200, 229),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'new',
+                          style: orderdetails,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 5.0.wp,
-                  ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: appcolor,
-                  )
-                ],
+                    SizedBox(
+                      width: 5.0.wp,
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: appcolor,
+                    )
+                  ],
+                ),
               ),
             ),
           ),
@@ -345,51 +353,56 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
           SizedBox(
             height: 1.0.hp,
           ),
-          Container(
-            height: 20.0.hp,
-            width: 100.0.wp,
-            color: screenbackground,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 28.0, right: 28, top: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Delivery Address',
-                    style: subtitleStyleappcolor,
-                  ),
-                  Text(
-                    'Kowsalya',
-                    style: orderdetails,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '17/4 Sathukudal Road,Vriddhachalam',
-                        style: orderdetails,
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        size: 20,
-                        color: toptitlecolor,
-                      )
-                    ],
-                  ),
-                  Text(
-                    'Opposite mechanic shop',
-                    style: orderdetails,
-                  ),
-                  Text(
-                    'Cuddalore district',
-                    style: orderdetails,
-                  ),
-                  Text(
-                    '7010644326',
-                    style: orderdetails,
-                  ),
-                ],
+          InkWell(
+            onTap: (() {
+              Get.to(DeliveryAddressScreen());
+            }),
+            child: Container(
+              height: 20.0.hp,
+              width: 100.0.wp,
+              color: screenbackground,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 28.0, right: 28, top: 10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Delivery Address',
+                      style: subtitleStyleappcolor,
+                    ),
+                    Text(
+                      'Kowsalya',
+                      style: orderdetails,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '17/4 Sathukudal Road,Vriddhachalam',
+                          style: orderdetails,
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          size: 20,
+                          color: toptitlecolor,
+                        )
+                      ],
+                    ),
+                    Text(
+                      'Opposite mechanic shop',
+                      style: orderdetails,
+                    ),
+                    Text(
+                      'Cuddalore district',
+                      style: orderdetails,
+                    ),
+                    Text(
+                      '7010644326',
+                      style: orderdetails,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

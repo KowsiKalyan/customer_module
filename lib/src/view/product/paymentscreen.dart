@@ -57,16 +57,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   },
                   child: Icon(Icons.arrow_back)),
             ),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: Icon(
-                  Icons.notifications,
-                  color: screenbackground,
-                  size: 20,
-                ),
-              ),
-            ],
             title: Text(
               'PAYMENT',
               style: loginbuttonstyle,

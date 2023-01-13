@@ -14,7 +14,7 @@ class _OrderPlacedScreenState extends State<OrderPlacedScreen> {
   void initState() {
     super.initState();
     images = AssetImage(
-      "assets/images/Done.gif",
+      "assets/img/deliver.gif",
     );
   }
 
@@ -60,13 +60,22 @@ class _OrderPlacedScreenState extends State<OrderPlacedScreen> {
                 onTap: () {
                   Get.to(const DashboardScreen());
                 },
-                child: Text(
-                  'Go to Home',
-                  style: GoogleFonts.jost(
-                      textStyle: TextStyle(
-                          fontSize: 11.00.sp,
-                          color: const Color(0xff000000),
-                          fontWeight: FontWeight.w600)),
+                child: Container(
+                  height: 4.0.hp,
+                  width: 25.0.wp,
+                  decoration: BoxDecoration(
+                      color: buttoncolor,
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Center(
+                    child: Text(
+                      'Go to Home',
+                      style: GoogleFonts.jost(
+                          textStyle: TextStyle(
+                              fontSize: 11.00.sp,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600)),
+                    ),
+                  ),
                 ),
               )
             ],

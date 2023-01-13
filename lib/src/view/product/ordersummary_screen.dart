@@ -1,6 +1,8 @@
+import 'package:customermodule/src/view/product/deiveryaddress_screen.dart';
+
 import '../../../all_packages.dart';
 import '../../../utils/common_function/row_customwidget.dart';
-import 'ordersuccess_screen.dart';
+import 'orderplaced_screen.dart';
 
 class OrderSummary extends StatefulWidget {
   const OrderSummary({super.key});
@@ -16,6 +18,7 @@ class _OrderSummaryState extends State<OrderSummary> {
         //   backgroundColor: bgcolor,
         appBar: AppBar(
           backgroundColor: appcolor,
+          centerTitle: true,
           title: Text(
             'Order Summary',
             style: apptitle,
@@ -128,90 +131,100 @@ class _OrderSummaryState extends State<OrderSummary> {
               SizedBox(
                 height: 1.0.hp,
               ),
-              Container(
-                height: 18.0.hp,
-                width: 100.0.wp,
-                // color: screenbackground,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 28.0, right: 28),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Delivery Address',
-                        style: subtitleStyleappcolor,
-                      ),
-                      Text(
-                        'Kowsalya',
-                        style: orderdetails,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            '17/4 Sathukudal Road,Vriddhachalam',
-                            style: orderdetails,
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: toptitlecolor,
-                          )
-                        ],
-                      ),
-                      Text(
-                        'Opposite mechanic shop',
-                        style: orderdetails,
-                      ),
-                      Text(
-                        'Cuddalore district',
-                        style: orderdetails,
-                      ),
-                      Text(
-                        '7010644326',
-                        style: orderdetails,
-                      ),
-                    ],
+              InkWell(
+                onTap: (() {
+                  Get.to(DeliveryAddressScreen());
+                }),
+                child: Container(
+                  height: 18.0.hp,
+                  width: 100.0.wp,
+                  // color: screenbackground,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 28.0, right: 28),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Delivery Address',
+                          style: subtitleStyleappcolor,
+                        ),
+                        Text(
+                          'Kowsalya',
+                          style: orderdetails,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              '17/4 Sathukudal Road,Vriddhachalam',
+                              style: orderdetails,
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              size: 20,
+                              color: toptitlecolor,
+                            )
+                          ],
+                        ),
+                        Text(
+                          'Opposite mechanic shop',
+                          style: orderdetails,
+                        ),
+                        Text(
+                          'Cuddalore district',
+                          style: orderdetails,
+                        ),
+                        Text(
+                          '7010644326',
+                          style: orderdetails,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
               SizedBox(
                 height: 1.0.hp,
               ),
-              Container(
-                height: 8.0.hp,
-                width: 100.0.wp,
-                //color: screenbackground,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 28.0, right: 28),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Payment Mode',
-                        style: subtitleStyleappcolor,
-                      ),
-                      SizedBox(
-                        height: 1.0.hp,
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Cash on Delivery',
-                            style: orderdetails,
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            color: toptitlecolor,
-                            size: 20,
-                          )
-                        ],
-                      ),
-                    ],
+              InkWell(
+                onTap: (() {
+                  Get.to(PaymentScreen());
+                }),
+                child: Container(
+                  height: 8.0.hp,
+                  width: 100.0.wp,
+                  //color: screenbackground,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 28.0, right: 28),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Payment Mode',
+                          style: subtitleStyleappcolor,
+                        ),
+                        SizedBox(
+                          height: 1.0.hp,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Cash on Delivery',
+                              style: orderdetails,
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              color: toptitlecolor,
+                              size: 20,
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
