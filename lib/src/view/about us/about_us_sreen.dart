@@ -1,6 +1,4 @@
 import 'package:customermodule/all_packages.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class AboutUsScreen extends StatefulWidget {
   const AboutUsScreen({super.key});

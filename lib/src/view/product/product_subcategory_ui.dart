@@ -1,7 +1,5 @@
 import 'package:customermodule/all_packages.dart';
 
-import '../homescreen/homescreen.dart';
-
 class Productsubcategory extends StatefulWidget {
   const Productsubcategory(
       {super.key, required this.index, required this.text});

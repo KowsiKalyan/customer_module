@@ -1,7 +1,4 @@
-import 'package:customermodule/src/view/login/login_screen.dart';
-
 import '../../../all_packages.dart';
-import 'forgot_otp_field.dart';
 
 class ForgotOTPScreen extends StatefulWidget {
   ForgotOTPScreen({Key? key, this.mobileNumber}) : super(key: key);

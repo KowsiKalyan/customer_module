@@ -1,15 +1,4 @@
-import 'dart:async';
-
 import 'package:customermodule/all_packages.dart';
-import 'package:customermodule/src/view/My%20order/processing_order.dart';
-import 'package:customermodule/src/view/My%20order/return_order.dart';
-import 'package:customermodule/src/view/My%20order/shipped_order.dart';
-
-import 'package:flutter/material.dart';
-
-import 'alldetails_screen.dart';
-import 'cancelled_order.dart';
-import 'delivered_order.dart';
 
 class MyOrderScreen extends StatefulWidget {
   const MyOrderScreen({super.key});

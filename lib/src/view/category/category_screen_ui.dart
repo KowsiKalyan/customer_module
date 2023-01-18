@@ -1,7 +1,3 @@
-import 'dart:ffi';
-
-import 'package:flutter/material.dart';
-
 import '../../../all_packages.dart';
 
 class CategoryScreen extends StatefulWidget {

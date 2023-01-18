@@ -1,10 +1,6 @@
 import 'package:customermodule/src/controller/theme_controller.dart';
 
 import 'package:customermodule/src/view/splash_screen.dart';
-import 'package:customermodule/utils/intro_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'all_packages.dart';
 
@@ -22,17 +18,17 @@ void main() async {
         theme: controller.theme,
         home: isFirstTime
             ? IntroScreen(prefs: prefs, boolKey: boolKey)
-            : MyApp());
+            : const MyApp());
   }));
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SimpleBuilder(builder: (_) {
-      return SplashScreen();
+      return const SplashScreen();
     });
   }
 }

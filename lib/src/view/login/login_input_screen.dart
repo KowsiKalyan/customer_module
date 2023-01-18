@@ -1,5 +1,4 @@
 import '../../../all_packages.dart';
-import '../forgot_password/forgot_password_screen.dart';
 
 class LoginInputFields extends StatefulWidget {
   const LoginInputFields({Key? key}) : super(key: key);

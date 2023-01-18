@@ -1,5 +1,4 @@
 import '../../../all_packages.dart';
-import '../signup_otp_screens/otp_screens.dart';
 
 class SignupInputFields extends StatefulWidget {
   const SignupInputFields({Key? key}) : super(key: key);

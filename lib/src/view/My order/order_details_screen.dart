@@ -1,13 +1,4 @@
-import 'package:customermodule/src/view/My%20order/rating_screen.dart';
-import 'package:customermodule/src/view/customer_support/customer_support.dart';
-import 'package:customermodule/src/view/product/deiveryaddress_screen.dart';
-
-import 'package:customermodule/utils/common_function/row_customwidget.dart';
-
 import '../../../../all_packages.dart';
-
-import '../product/order_tracking.dart';
-import 'add_review.dart';
 
 class OrderDetailsScreen extends StatefulWidget {
   const OrderDetailsScreen({super.key});

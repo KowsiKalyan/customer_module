@@ -1,5 +1,3 @@
-import 'package:customermodule/src/view/forgot_password/forgot_password_textfield.dart';
-
 import '../../../all_packages.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {

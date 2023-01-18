@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:customermodule/all_packages.dart';
 
 class ProductRatings extends StatefulWidget {

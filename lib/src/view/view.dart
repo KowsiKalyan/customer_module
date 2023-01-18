@@ -1,7 +1,30 @@
 export 'dashboard.dart';
-export 'product/product_view.dart';
+export 'product/view.dart';
 
-export 'cart/cart.dart';
-export 'explore/explore.dart';
-export 'category/category.dart';
-export 'profile/menu_screen.dart';
+export 'cart/view.dart';
+export 'explore/view.dart';
+export 'category/view.dart';
+
+export 'change theme/view.dart';
+export 'changepassword/view.dart';
+export 'contact us/view.dart';
+export 'create_pssword/view.dart';
+export 'customer_support/view.dart';
+export 'explore/view.dart';
+export 'faq/view.dart';
+export 'forgot_password/view.dart';
+export 'homescreen/view.dart';
+export 'login/view.dart';
+export 'My order/view.dart';
+export 'notification/view.dart';
+export 'privacy policy/view.dart';
+export 'product/view.dart';
+export 'profile/view.dart';
+export 'refer and earn/view.dart';
+export 'return policy/view.dart';
+export 'shipping policy/view.dart';
+export 'signup_otp_screens/view.dart';
+export 'signup_screens/view.dart';
+export 'terms&condition/view.dart';
+export 'wishlist/view.dart';
+export 'splash_screen.dart';

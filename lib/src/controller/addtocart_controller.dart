@@ -5,7 +5,7 @@ import '../model/addtocart_response.dart';
 
 class AddToCartcontroller extends GetxController {
   RxBool isloading = true.obs;
-  List<Model> _model = [];
+  final List<Model> _model = [];
   List<Model> get model => _model;
   addtocartController() async {
     try {

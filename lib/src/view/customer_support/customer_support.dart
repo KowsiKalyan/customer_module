@@ -1,7 +1,5 @@
 import 'package:customermodule/all_packages.dart';
 
-import 'customer_history.dart';
-
 class CustomerSupport extends StatefulWidget {
   const CustomerSupport({super.key});
 

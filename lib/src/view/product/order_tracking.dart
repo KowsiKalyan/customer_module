@@ -1,5 +1,4 @@
 import 'package:customermodule/all_packages.dart';
-import 'package:customermodule/src/view/product/order_tracking_packages.dart';
 
 class OrderTrackingUi extends StatefulWidget {
   const OrderTrackingUi({Key? key}) : super(key: key);

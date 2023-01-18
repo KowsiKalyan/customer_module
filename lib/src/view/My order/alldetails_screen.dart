@@ -1,7 +1,4 @@
-import 'package:customermodule/src/view/My%20order/rating_screen.dart';
-
 import '../../../../all_packages.dart';
-import 'order_details_screen.dart';
 
 class AllDetails extends StatefulWidget {
   //const AllDetails({super.key});

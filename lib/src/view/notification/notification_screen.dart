@@ -1,7 +1,5 @@
 import 'package:customermodule/all_packages.dart';
 
-import 'notification_list_screen.dart';
-
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
 

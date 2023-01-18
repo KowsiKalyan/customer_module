@@ -1,9 +1,5 @@
 import 'package:customermodule/all_packages.dart';
 
-import 'homescreen/home_screen_ui.dart';
-import 'notification/notification_screen.dart';
-import 'wishlist/wishlist_screen.dart';
-
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
 

@@ -1,5 +1,3 @@
-import 'package:customermodule/src/view/My%20order/rating_screen.dart';
-
 import '../../../../all_packages.dart';
 
 class ReturnOrder extends StatefulWidget {

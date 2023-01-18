@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:customermodule/src/view/signup_otp_screens/otp_field.dart';
-
 import '../../../all_packages.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -110,7 +108,6 @@ class _OTPScreenState extends State<OTPScreen> {
                                   InkWell(
                                     onTap: () {
                                       // showCircular = true;
-                                      print('clickkkk');
                                     },
                                     child: Text(
                                       'Resend',

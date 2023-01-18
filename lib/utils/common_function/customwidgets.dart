@@ -1,5 +1,4 @@
 import 'package:customermodule/all_packages.dart';
-import 'package:flutter/material.dart';
 
 class CustomWidgets extends StatelessWidget {
   CustomWidgets({super.key, this.offer, this.titletext, this.showmoretext});

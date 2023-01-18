@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:customermodule/all_packages.dart';
-import 'package:image_picker/image_picker.dart';
 
 class AddReview extends StatefulWidget {
   const AddReview({super.key});

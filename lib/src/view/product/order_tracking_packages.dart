@@ -1,7 +1,6 @@
 library order_tracker;
 
 import 'package:customermodule/all_packages.dart';
-import 'package:flutter/material.dart';
 
 class OrderTracker extends StatefulWidget {
   ///This variable is used to set status of order, this get only enum which is already in a package below example present.

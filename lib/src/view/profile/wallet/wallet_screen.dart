@@ -1,13 +1,4 @@
-import 'dart:developer';
-
 import 'package:customermodule/all_packages.dart';
-import 'package:customermodule/src/view/My%20order/delivered_order.dart';
-import 'package:customermodule/src/view/profile/wallet/transaction_history_ui.dart';
-import 'package:customermodule/src/view/profile/wallet/wallet_history_ui.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
-import '../../../../utils/common_function/paymentcustomwidget.dart';
 
 class WalletScreen extends StatefulWidget {
   const WalletScreen({super.key});
@@ -64,9 +55,9 @@ class _WalletScreenState extends State<WalletScreen> {
                         ),
                         Container(
                           height: 25.0.hp,
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: ListView.builder(
-                              physics: NeverScrollableScrollPhysics(),
+                              physics: const NeverScrollableScrollPhysics(),
                               itemCount: paymentmethodname.length,
                               itemBuilder: ((context, index) {
                                 return Padding(
@@ -146,12 +137,12 @@ class _WalletScreenState extends State<WalletScreen> {
                                 onPressed: (() {
                                   Get.back();
                                 }),
-                                child: Text('Cancel')),
+                                child: const Text('Cancel')),
                             TextButton(
                                 onPressed: (() {
                                   Get.back();
                                 }),
-                                child: Text('Send'))
+                                child: const Text('Send'))
                           ],
                         )
                       ],
@@ -182,7 +173,7 @@ class _WalletScreenState extends State<WalletScreen> {
                           'Select Wihdrawal Request',
                           style: subtitleStyleappcolor,
                         ),
-                        Divider(),
+                        const Divider(),
                         SizedBox(
                           height: 1.0.hp,
                         ),
@@ -228,7 +219,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                 )),
                           ),
                         ),
-                        Divider(),
+                        const Divider(),
                         Text(
                           'Bank details',
                           style: orderdetails,
@@ -280,12 +271,12 @@ class _WalletScreenState extends State<WalletScreen> {
                                 onPressed: (() {
                                   Get.back();
                                 }),
-                                child: Text('Cancel')),
+                                child: const Text('Cancel')),
                             TextButton(
                                 onPressed: (() {
                                   Get.back();
                                 }),
-                                child: Text('Send'))
+                                child: const Text('Send'))
                           ],
                         )
                       ],
@@ -411,7 +402,7 @@ class _WalletScreenState extends State<WalletScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Icon(Icons.balance),
+                              const Icon(Icons.balance),
                               SizedBox(
                                 width: 1.0.wp,
                               ),
@@ -503,8 +494,8 @@ class _WalletScreenState extends State<WalletScreen> {
                 ),
               ),
               selectgst == 0
-                  ? TransactionHistoryScreen()
-                  : WalletHistoryScreen()
+                  ? const TransactionHistoryScreen()
+                  : const WalletHistoryScreen()
             ]),
           ),
         ));

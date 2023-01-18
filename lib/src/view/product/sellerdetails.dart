@@ -1,8 +1,4 @@
-import 'package:customermodule/src/view/explore/all_sellerdetsils_explore.dart';
-import 'package:customermodule/src/view/explore/allseller_ui.dart';
-
 import '../../../all_packages.dart';
-import '../explore/storedetails_ui.dart';
 
 class SellerDetailsScreen extends StatefulWidget {
   const SellerDetailsScreen({super.key});

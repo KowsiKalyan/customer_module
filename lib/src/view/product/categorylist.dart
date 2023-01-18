@@ -1,5 +1,3 @@
-import 'package:customermodule/utils/common_function/customwidgets.dart';
-
 import '../../../all_packages.dart';
 
 class CategoryList extends StatefulWidget {

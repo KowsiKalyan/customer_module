@@ -1,14 +1,4 @@
-import 'dart:ffi';
-
 import 'package:customermodule/all_packages.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
-import '../homescreen/homescreen.dart';
-import '../product/categorylist.dart';
-import 'all_produts_filters.dart';
-import 'allproducts_ui.dart';
-import 'allseller_ui.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});

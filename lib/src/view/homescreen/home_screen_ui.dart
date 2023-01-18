@@ -1,7 +1,4 @@
 import 'package:customermodule/all_packages.dart';
-import 'package:customermodule/src/view/homescreen/homescreen.dart';
-
-import '../product/categorylist.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

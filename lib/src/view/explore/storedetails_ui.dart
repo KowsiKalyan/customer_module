@@ -1,8 +1,4 @@
-import 'package:customermodule/src/view/explore/seller_filter_ui.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-
 import '../../../all_packages.dart';
-import 'all_sellerdetsils_explore.dart';
 
 class StorenameDetails extends StatefulWidget {
   const StorenameDetails({super.key});

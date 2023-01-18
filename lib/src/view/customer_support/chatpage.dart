@@ -1,6 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:customermodule/src/view/customer_support/message.dart';
-
 import '../../../all_packages.dart';
 
 class ChatPage extends StatefulWidget {

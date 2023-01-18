@@ -1,10 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:customermodule/all_packages.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_chat_bubble/bubble_type.dart';
-import 'package:flutter_chat_bubble/chat_bubble.dart';
-import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_1.dart';
 
 class Message extends StatefulWidget {
   const Message({super.key});

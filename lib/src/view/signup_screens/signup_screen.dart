@@ -1,7 +1,3 @@
-import 'package:customermodule/src/view/login/login_screen.dart';
-import 'package:customermodule/src/view/signup_screens/signup_input_fields.dart';
-import 'package:customermodule/src/view/signup_screens/signup_sociallogin.dart';
-
 import '../../../all_packages.dart';
 
 class SignupScreen extends StatefulWidget {

@@ -1,5 +1,3 @@
-import 'package:customermodule/src/view/login/login_screen.dart';
-
 import '../../../all_packages.dart';
 
 class ChangeNewPassword extends StatefulWidget {

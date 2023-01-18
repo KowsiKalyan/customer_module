@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:customermodule/all_packages.dart';
 
 final List<String> imgList = [
@@ -10,6 +9,8 @@ final List<String> imgList = [
 final themeMode = ValueNotifier(2);
 
 class CarouselWithIndicatorDemo extends StatefulWidget {
+  const CarouselWithIndicatorDemo({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _CarouselWithIndicatorState();

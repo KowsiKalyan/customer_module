@@ -1,6 +1,4 @@
 import 'package:customermodule/all_packages.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ShippingPolicyScreen extends StatefulWidget {
   const ShippingPolicyScreen({super.key});

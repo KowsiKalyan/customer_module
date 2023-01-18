@@ -1,6 +1,3 @@
-import 'package:customermodule/src/view/explore/storedetails_ui.dart';
-import 'package:sliver_header_delegate/sliver_header_delegate.dart';
-
 import '../../../all_packages.dart';
 
 class AllSellersScreen extends StatefulWidget {

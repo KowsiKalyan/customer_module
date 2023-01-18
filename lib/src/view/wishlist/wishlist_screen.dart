@@ -1,6 +1,4 @@
 import 'package:customermodule/all_packages.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class WishlistScreen extends StatefulWidget {
   const WishlistScreen({super.key});
@@ -49,7 +47,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           itemCount: name.length,
           itemBuilder: ((context, index) {
             return Stack(children: [
-              Container(
+              SizedBox(
                 height: 13.0.hp,
                 width: 100.0.wp,
               ),
@@ -62,7 +60,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                     width: 100.0.wp,
                     child: Card(
                         child: Row(children: [
-                      Container(
+                      SizedBox(
                           height: 12.0.hp,
                           width: 30.0.wp,
                           child: Image.asset(
@@ -118,7 +116,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                         name.removeAt(index);
                       });
                     }),
-                    child: CircleAvatar(
+                    child: const CircleAvatar(
                         radius: 15,
                         backgroundColor: buttoncolor,
                         child: Icon(

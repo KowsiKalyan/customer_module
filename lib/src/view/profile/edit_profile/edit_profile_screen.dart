@@ -1,7 +1,4 @@
-import 'package:customermodule/src/view/profile/edit_profile/profile_image.dart';
-
 import '../../../../all_packages.dart';
-import 'detail_section.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({Key? key}) : super(key: key);

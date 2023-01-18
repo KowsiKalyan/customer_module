@@ -11,7 +11,7 @@ class AddtoCartservice {
           Uri.parse('http://dummyapi.io/data/v1/user'),
           headers: {'app-id': '6218809df11d1d412af5bac4'});
       var jsonrrsponse = jsonDecode(response.body);
-      print(jsonrrsponse);
+
       if (response.statusCode == 200) {
         return Model.fromJson(jsonrrsponse);
       }

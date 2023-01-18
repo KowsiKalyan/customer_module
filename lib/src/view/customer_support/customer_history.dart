@@ -1,7 +1,3 @@
-import 'dart:ffi';
-
-import 'package:customermodule/src/view/customer_support/chatpage.dart';
-
 import '../../../all_packages.dart';
 
 class CustomerHistoryPage extends StatefulWidget {

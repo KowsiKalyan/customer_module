@@ -1,10 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:customermodule/src/view/product/create_delivery_address.dart';
-
 import '../../../all_packages.dart';
-import 'deiveryaddress_screen.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});

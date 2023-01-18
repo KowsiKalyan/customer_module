@@ -1,8 +1,4 @@
-import 'package:customermodule/src/view/product/deiveryaddress_screen.dart';
-
 import '../../../all_packages.dart';
-import '../../../utils/common_function/row_customwidget.dart';
-import 'orderplaced_screen.dart';
 
 class OrderSummary extends StatefulWidget {
   const OrderSummary({super.key});

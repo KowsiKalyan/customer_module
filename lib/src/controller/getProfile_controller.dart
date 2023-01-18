@@ -1,4 +1,4 @@
-import '../../all_packages.dart';
+import 'package:customermodule/all_packages.dart';
 
 class ProfileController extends GetxController {
   TextEditingController userName = TextEditingController();

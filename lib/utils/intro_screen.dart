@@ -1,16 +1,11 @@
 import 'package:customermodule/all_packages.dart';
-import 'package:customermodule/src/view/homescreen/homescreen.dart';
-import 'package:customermodule/src/view/splash_screen.dart';
-import 'package:flutter/material.dart';
-
-import 'package:introduction_screen/introduction_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class IntroScreen extends StatelessWidget {
   SharedPreferences? prefs;
   String? boolKey;
-  IntroScreen({this.boolKey, this.prefs});
+  IntroScreen({super.key, this.boolKey, this.prefs});
 
+  @override
   Widget build(BuildContext context) {
     prefs!.setBool(boolKey!, false);
     PageDecoration pageDecoration = PageDecoration(
@@ -19,8 +14,8 @@ class IntroScreen extends StatelessWidget {
       //body text size and color
 
       //decription padding
-      imagePadding: EdgeInsets.only(top: 50), //image padding
-      boxDecoration: BoxDecoration(
+      imagePadding: const EdgeInsets.only(top: 50), //image padding
+      boxDecoration: const BoxDecoration(
           // gradient: LinearGradient(
           //   begin: Alignment.topRight,
           //   end: Alignment.bottomLeft,
@@ -110,7 +105,7 @@ class IntroScreen extends StatelessWidget {
     return Align(
       alignment: Alignment.center,
       child: Image.asset(
-        '$assetName',
+        assetName,
       ),
     );
   }

@@ -1,7 +1,4 @@
-import 'package:pin_code_fields/pin_code_fields.dart';
-
 import '../../../all_packages.dart';
-import '../create_pssword/change_new_password.dart';
 
 class ForgotOtpField extends StatefulWidget {
   const ForgotOtpField({Key? key}) : super(key: key);
